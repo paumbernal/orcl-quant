@@ -1,0 +1,40 @@
+scenario,driver,value,basis,explanation
+all,Share count (m),"3,058",DATA,"10-Q cover-page shares outstanding (3,024m) + dilution from the latest quarter (diluted - basic weighted average = 34m)."
+all,Net debt ($m),"97,445",DATA,"Debt 125,337 + finance leases 9,185 - cash & securities 37,077 at 2026-08-31. Operating-lease liabilities are NOT added (their cost is already inside EBITDA)."
+all,Preferred / minority ($m),"4,954 / 424",DATA,Deducted from enterprise value at book value.
+all,Annual dividend per share ($),2.02,DATA,Trailing-12-month dividends paid / average diluted shares; held flat.
+all,"SaaS growth, FY27-28",11.1%,DATA,Mean of the last four quarters' reported SaaS YoY growth.
+all,"Non-cloud (licence, hardware, services) growth, FY27-28",1.0%,DATA,Mean YoY growth of (total revenue - cloud revenue) over the last four quarters.
+bear,Terminal EBITDA margin,40.1%,DATA,25th percentile of Oracle's own TTM EBITDA margin over 10 years (range 31.6%-47.3%; current 47.3%). Reached linearly over 5 years.
+base,Terminal EBITDA margin,41.3%,DATA,50th percentile of Oracle's own TTM EBITDA margin over 10 years (range 31.6%-47.3%; current 47.3%). Reached linearly over 5 years.
+bull,Terminal EBITDA margin,47.3%,DATA,75th percentile of Oracle's own TTM EBITDA margin over 10 years (range 31.6%-47.3%; current 47.3%). Reached linearly over 5 years. Floored at today's margin so the bull case never assumes compression.
+bear,Net working capital / revenue,-10.4%,DATA,75th percentile of (receivables - payables - contract liabilities)/TTM revenue over 10 years; today -42.4% (customer prepayments spiked). Moves there over 3 years: a prepayment unwind is a cash OUTFLOW.
+base,Net working capital / revenue,-12.4%,DATA,50th percentile of (receivables - payables - contract liabilities)/TTM revenue over 10 years; today -42.4% (customer prepayments spiked). Moves there over 3 years: a prepayment unwind is a cash OUTFLOW.
+bull,Net working capital / revenue,-15.4%,DATA,25th percentile of (receivables - payables - contract liabilities)/TTM revenue over 10 years; today -42.4% (customer prepayments spiked). Moves there over 3 years: a prepayment unwind is a cash OUTFLOW.
+all,Depreciation rate (of net PP&E),10.4%,DATA,"TTM depreciation 9,428 / average net PP&E 90,520. Scenario multipliers (bear x1.15, bull x0.9) reflect asset-life uncertainty (SCENARIO). Note: construction-in-progress does not depreciate yet, so the in-service rate is likely higher than this blended figure."
+all,Amortisation of acquired intangibles,"1,454 $m/yr, run off over 5 yrs",DATA,"TTM amount, declining linearly to zero."
+bear,Terminal net PP&E / revenue,1.28x,DATA,"Set to 25% of the way from Oracle's own FY26 level (1.48x, adverse end) toward the hyperscaler median (0.65x); converges over 9 years. Capex is then whatever is needed to hold PP&E at that ratio."
+base,Terminal net PP&E / revenue,1.02x,DATA,Set to the most capital-intensive hyperscaler peer (MSFT 1.02x); converges over 9 years. Capex is then whatever is needed to hold PP&E at that ratio.
+bull,Terminal net PP&E / revenue,0.86x,DATA,"Set to 25% of the way from the hyperscaler median (0.65x; MSFT 1.02x, GOOGL 0.65x, AMZN 0.62x) toward Oracle's own level (1.48x); converges over 9 years. Capex is then whatever is needed to hold PP&E at that ratio."
+bear,"OCI growth persistence (annual, FY29-31)",0.43,DATA,"Excess growth over the terminal rate decays by this factor each year (25% of the way from the pre-regime-break estimate (0.33: AR(1) 0.76, n=55, growth reverts quickly) toward the full-sample estimate). Regime break = first quarter RPO grew >100% YoY (2025-08-31)."
+base,"OCI growth persistence (annual, FY29-31)",0.54,DATA,Excess growth over the terminal rate decays by this factor each year (midpoint of the two regimes' annualised AR(1) estimates). Regime break = first quarter RPO grew >100% YoY (2025-08-31).
+bull,"OCI growth persistence (annual, FY29-31)",0.64,DATA,"Excess growth over the terminal rate decays by this factor each year (25% of the way from the full-sample estimate (0.75: AR(1) 0.93, se 0.08, n=60, growth is persistent in the AI regime) toward the pre-break estimate). Regime break = first quarter RPO grew >100% YoY (2025-08-31)."
+all,Tax rate,12.9% -> 18.0%,DATA / SCENARIO,"Starts at the TTM effective rate (DATA, bounded 12%-25%) and normalises over 5 years to a long-run 18% (SCENARIO: Oracle's 10y median effective rate was 12.2%; statutory US federal is 21%)."
+all,Beta (Blume-adjusted),"2y: 1.43, 5y: 1.15, full: 1.05",DATA,"OLS beta of daily excess returns vs the S&P 500 (SPY) over 2y / 5y / full history, adjusted 0.67*raw + 0.33. Bear uses the highest, base the median, bull the lowest."
+all,Interest rate on existing net debt,4.4% -> 6.8%,DATA,"TTM interest expense / average gross debt, rising to the marginal cost (10y Treasury 5.26% + 1.5% spread [SCENARIO]) as debt refinances over 5 years."
+bear,"Valuation multiples (P/E, EV/EBITDA, EV/Revenue)",19.5x / 13.1x / 5.5x,DATA,25th percentile of Oracle's own trailing multiples over 10 years (today 21.5x / 15.2x / 7.2x).
+base,"Valuation multiples (P/E, EV/EBITDA, EV/Revenue)",27.5x / 16.6x / 6.6x,DATA,50th percentile of Oracle's own trailing multiples over 10 years (today 21.5x / 15.2x / 7.2x).
+bull,"Valuation multiples (P/E, EV/EBITDA, EV/Revenue)",37.5x / 20.4x / 8.0x,DATA,75th percentile of Oracle's own trailing multiples over 10 years (today 21.5x / 15.2x / 7.2x).
+bear,Revenue FY27 ($m),"89,098",CONSENSUS,Lowest analyst estimate in the snapshot (2026-10-01).
+base,Revenue FY27 ($m),"90,475",CONSENSUS,Mean of 37 analysts.
+bull,Revenue FY27 ($m),"91,688",CONSENSUS,Highest analyst estimate in the snapshot.
+bear,Revenue FY28 ($m),"107,657",CONSENSUS,Lowest analyst estimate in the snapshot (2026-10-01).
+base,Revenue FY28 ($m),"131,448",CONSENSUS,Mean of 39 analysts.
+bull,Revenue FY28 ($m),"139,642",CONSENSUS,Highest analyst estimate in the snapshot.
+bear,Terminal growth,2.0%,SCENARIO,Stated scenario assumption; must stay below the 10-year Treasury yield (5.26%) and long-run nominal GDP growth.
+bear,Scenario probability,25%,SCENARIO,Subjective weight used only for the probability-weighted value.
+base,Terminal growth,3.0%,SCENARIO,Stated scenario assumption; must stay below the 10-year Treasury yield (5.26%) and long-run nominal GDP growth.
+base,Scenario probability,50%,SCENARIO,Subjective weight used only for the probability-weighted value.
+bull,Terminal growth,3.5%,SCENARIO,Stated scenario assumption; must stay below the 10-year Treasury yield (5.26%) and long-run nominal GDP growth.
+bull,Scenario probability,25%,SCENARIO,Subjective weight used only for the probability-weighted value.
+all,Equity risk premium,5.0%,SCENARIO,Stated assumption (typical long-run range 4-6%).

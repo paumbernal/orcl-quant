@@ -1,0 +1,58 @@
+{
+  "checks": [
+    {
+      "check": "income statement identity (revenue - costs = operating income)",
+      "passed": true,
+      "detail": "max abs error $0.000m"
+    },
+    {
+      "check": "four quarters sum to fiscal year: revenue",
+      "passed": true,
+      "detail": "max rel. error 0.0028%"
+    },
+    {
+      "check": "four quarters sum to fiscal year: operating_income",
+      "passed": true,
+      "detail": "max rel. error 0.0092%"
+    },
+    {
+      "check": "four quarters sum to fiscal year: ocf",
+      "passed": true,
+      "detail": "max rel. error 0.0000%"
+    },
+    {
+      "check": "four quarters sum to fiscal year: capex",
+      "passed": true,
+      "detail": "max rel. error 0.0000%"
+    },
+    {
+      "check": "no missing fiscal quarters",
+      "passed": true,
+      "detail": "largest gap 92 days"
+    },
+    {
+      "check": "availability after period end",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "price index strictly increasing",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "price data is recent",
+      "passed": true,
+      "detail": "last bar 2026-09-30"
+    },
+    {
+      "check": "cloud = OCI + SaaS where all three parsed",
+      "passed": true,
+      "detail": "0 quarters inconsistent"
+    }
+  ],
+  "warnings": [],
+  "n_quarters": 65,
+  "latest_quarter": "2026-08-31",
+  "price_last_date": "2026-09-30"
+}

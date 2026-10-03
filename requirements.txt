@@ -1,0 +1,23 @@
+# Core scientific stack
+numpy>=1.26
+pandas>=2.2
+scipy>=1.11
+statsmodels>=0.14
+scikit-learn>=1.4
+arch>=7.0            # GARCH(1,1) used in the Monte Carlo engine
+
+# Data acquisition
+yfinance>=0.2.40     # daily OHLCV + earnings dates / consensus snapshot (Yahoo Finance)
+requests>=2.31       # SEC EDGAR XBRL API, FRED CSV endpoint
+beautifulsoup4>=4.12 # parsing 8-K earnings releases
+lxml>=5.0
+pyyaml>=6.0
+
+# Visualisation + dashboard
+plotly>=5.20
+kaleido>=1.0         # static PNG export of the Plotly charts
+matplotlib>=3.8
+streamlit>=1.35
+
+# Testing
+pytest>=8.0

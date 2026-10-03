@@ -1,0 +1,177 @@
+{
+  "consensus_snapshot": {
+    "file": "C:/Users/super/Downloads/orcl-quant-lab/data/processed/consensus_snapshot.json",
+    "kind": "CONSENSUS",
+    "notes": "Forecasts are third-party opinions, not data. consensus_history.csv appends one row per period per run.",
+    "retrieved_at_utc": "2026-10-01T16:08:23Z",
+    "sha256": "3424c21143ae6fcc71167dffb31ce3e31f549a9272b50656db0143923218caef",
+    "source": "Yahoo Finance analyst consensus (forward EPS / revenue, revisions, price targets) - a dated SNAPSHOT, not history"
+  },
+  "earnings_events": {
+    "file": "C:/Users/super/Downloads/orcl-quant-lab/data/processed/earnings_events.csv",
+    "first_date": "2009-02-28",
+    "kind": "HISTORICAL",
+    "last_date": "2026-08-31",
+    "notes": "reaction_date = first session whose close reflects the release (Oracle reports after 16:00 ET). eps_actual is the non-GAAP EPS as reported by Yahoo; revenue surprise is not available from free sources.",
+    "retrieved_at_utc": "2026-10-01T15:32:45Z",
+    "rows": 71,
+    "sha256": "fd607bb4726611daec82619bf66f8b8b5d22b0ab6d5f3aded2443bbf411248f2",
+    "source": "SEC EDGAR 8-K Item 2.02 acceptance timestamps + Yahoo Finance consensus EPS surprises"
+  },
+  "fundamentals_annual": {
+    "file": "C:/Users/super/Downloads/orcl-quant-lab/data/processed/fundamentals_annual.csv",
+    "first_date": "2011-05-31",
+    "kind": "HISTORICAL",
+    "last_date": "2026-05-31",
+    "notes": "",
+    "retrieved_at_utc": "2026-10-01T16:08:24Z",
+    "rows": 16,
+    "sha256": "d209fe1a0526a8a1dec1c485efae2f603421e19782056957184a6aab395be39d",
+    "source": "SEC EDGAR XBRL (10-K fiscal-year values)"
+  },
+  "fundamentals_annual_xbrl": {
+    "file": "C:/Users/super/Downloads/orcl-quant-lab/data/processed/fundamentals_annual_xbrl.csv",
+    "first_date": "2011-05-31",
+    "kind": "HISTORICAL",
+    "last_date": "2026-05-31",
+    "notes": "",
+    "retrieved_at_utc": "2026-10-01T15:35:18Z",
+    "rows": 16,
+    "sha256": "592e6efa632f8290981bc4a9a19ba96cc26ce8735c3d806e1a166f98b4094809",
+    "source": "SEC EDGAR XBRL companyfacts (us-gaap); quarters derived from 10-Q/10-K, first-filed values"
+  },
+  "fundamentals_quarterly": {
+    "file": "C:/Users/super/Downloads/orcl-quant-lab/data/processed/fundamentals_quarterly.csv",
+    "first_date": "2010-08-31",
+    "kind": "HISTORICAL",
+    "last_date": "2026-08-31",
+    "notes": "USD in $ millions. avail_date = first session reflecting the release (point-in-time safe).",
+    "retrieved_at_utc": "2026-10-01T16:08:24Z",
+    "rows": 65,
+    "sha256": "1adf5a7db98b1cbe921cae01e0283a3957125c8ad6b0f4ffed9175c01ab6c1ee",
+    "source": "SEC EDGAR XBRL + Oracle earnings releases (derived ratios computed in analytics/fundamentals.py)"
+  },
+  "fundamentals_quarterly_xbrl": {
+    "file": "C:/Users/super/Downloads/orcl-quant-lab/data/processed/fundamentals_quarterly_xbrl.csv",
+    "first_date": "2010-08-31",
+    "kind": "HISTORICAL",
+    "last_date": "2026-08-31",
+    "notes": "Q4 = FY - 9M YTD; share counts are averages (Q4 = 4*FY - sum(Q1..Q3)). 'filed' = first filing date.",
+    "retrieved_at_utc": "2026-10-01T15:35:18Z",
+    "rows": 65,
+    "sha256": "feb99e5bba8a5661e69da294177d733465190147c6be7a354a681b6506dd1380",
+    "source": "SEC EDGAR XBRL companyfacts (us-gaap); quarters derived from 10-Q/10-K, first-filed values"
+  },
+  "ohlcv_ORCL": {
+    "file": "C:/Users/super/Downloads/orcl-quant-lab/data/processed/ohlcv_ORCL.csv",
+    "first_date": "2010-01-04",
+    "kind": "HISTORICAL",
+    "last_date": "2026-09-30",
+    "notes": "",
+    "retrieved_at_utc": "2026-10-01T15:32:41Z",
+    "rows": 4211,
+    "sha256": "65da10b93413dc9c9b43409b2ee459652a02dfd56e5f2ddd2263fcafd7881de1",
+    "source": "Yahoo Finance via yfinance (auto_adjust=False; adj_close is dividend-adjusted)"
+  },
+  "peer_fundamentals": {
+    "file": "C:/Users/super/Downloads/orcl-quant-lab/data/processed/peer_fundamentals.csv",
+    "kind": "HISTORICAL",
+    "notes": "Anchors for terminal capital intensity (net PP&E / revenue) and margin ranges; not a forecast.",
+    "retrieved_at_utc": "2026-10-01T15:43:07Z",
+    "sha256": "a0bba2d7d736b0265d19db3ac4c31d496c36b95c9218ed66b5760bc9e34e1bc5",
+    "source": "Yahoo Finance annual statements (MSFT, GOOGL, AMZN, NVDA) - ~4 fiscal years each"
+  },
+  "press_release_kpis": {
+    "file": "C:/Users/super/Downloads/orcl-quant-lab/data/processed/press_release_kpis.csv",
+    "first_date": "2018-05-31",
+    "kind": "HISTORICAL",
+    "last_date": "2026-08-31",
+    "notes": "Cloud / IaaS / SaaS revenue in $bn (rounded to 0.1 by Oracle) and USD growth %. Unparsed items are NaN. Next-quarter guidance parsed only where the release states it.",
+    "retrieved_at_utc": "2026-10-01T15:32:45Z",
+    "rows": 34,
+    "sha256": "fe50342f5c539b3c593b5688c3579d9d669a335017a1ca97cb53b567651fb195",
+    "source": "Oracle earnings press releases (SEC EDGAR 8-K Exhibit 99.1), parsed with regex"
+  },
+  "prices_adj_close": {
+    "file": "C:/Users/super/Downloads/orcl-quant-lab/data/processed/prices_adj_close.csv",
+    "first_date": "2010-01-04",
+    "kind": "HISTORICAL",
+    "last_date": "2026-09-30",
+    "notes": "Benchmarks use total-return ETF proxies: SPY (S&P 500), QQQ (Nasdaq 100), SMH (semiconductors).",
+    "retrieved_at_utc": "2026-10-01T15:32:41Z",
+    "rows": 4211,
+    "sha256": "41b37e265582d84b339748a49e07a26ecaba0a74c1163e7f557afea833ca5282",
+    "source": "Yahoo Finance via yfinance (auto_adjust=False; adj_close is dividend-adjusted)",
+    "tickers": [
+      "ORCL",
+      "SPY",
+      "QQQ",
+      "SMH",
+      "NVDA",
+      "MSFT",
+      "AMZN",
+      "GOOGL"
+    ]
+  },
+  "prices_close": {
+    "file": "C:/Users/super/Downloads/orcl-quant-lab/data/processed/prices_close.csv",
+    "first_date": "2010-01-04",
+    "kind": "HISTORICAL",
+    "last_date": "2026-09-30",
+    "notes": "Benchmarks use total-return ETF proxies: SPY (S&P 500), QQQ (Nasdaq 100), SMH (semiconductors).",
+    "retrieved_at_utc": "2026-10-01T15:32:41Z",
+    "rows": 4211,
+    "sha256": "feec329007616ffefb5ec5f6a5b7a06f2ca2fe8d69fc152143444385af0650fe",
+    "source": "Yahoo Finance via yfinance (auto_adjust=False; adj_close is dividend-adjusted)",
+    "tickers": [
+      "ORCL",
+      "SPY",
+      "QQQ",
+      "SMH",
+      "NVDA",
+      "MSFT",
+      "AMZN",
+      "GOOGL"
+    ]
+  },
+  "prices_volume": {
+    "file": "C:/Users/super/Downloads/orcl-quant-lab/data/processed/prices_volume.csv",
+    "first_date": "2010-01-04",
+    "kind": "HISTORICAL",
+    "last_date": "2026-09-30",
+    "notes": "Benchmarks use total-return ETF proxies: SPY (S&P 500), QQQ (Nasdaq 100), SMH (semiconductors).",
+    "retrieved_at_utc": "2026-10-01T15:32:41Z",
+    "rows": 4211,
+    "sha256": "ec931b5169db6da06fa3011b79cc1149d30ef327e7267aae848d81ff707aa5d9",
+    "source": "Yahoo Finance via yfinance (auto_adjust=False; adj_close is dividend-adjusted)",
+    "tickers": [
+      "ORCL",
+      "SPY",
+      "QQQ",
+      "SMH",
+      "NVDA",
+      "MSFT",
+      "AMZN",
+      "GOOGL"
+    ]
+  },
+  "risk_free": {
+    "file": "C:/Users/super/Downloads/orcl-quant-lab/data/processed/risk_free.csv",
+    "first_date": "2010-01-04",
+    "kind": "HISTORICAL",
+    "last_date": "2026-09-30",
+    "notes": "Annualised decimal rates, forward-filled to trading days. rf_3m is used for Sharpe/Sortino/alpha, rf_10y for the DCF.",
+    "retrieved_at_utc": "2026-10-01T15:32:42Z",
+    "rows": 4211,
+    "sha256": "e564a6a05db6770b681659b63ea51e090722838e94e3c9fc22c517477a4f7f90",
+    "source": "FRED (DGS3MO, DGS10) - Board of Governors of the Federal Reserve System"
+  },
+  "sec_companyfacts_raw": {
+    "file": "C:/Users/super/Downloads/orcl-quant-lab/data/raw/sec/companyfacts_CIK0001341439.json",
+    "kind": "HISTORICAL",
+    "notes": "Raw JSON as downloaded; every XBRL fact Oracle has filed (non-dimensional).",
+    "retrieved_at_utc": "2026-10-01T15:15:25Z",
+    "sha256": "3dd1eead54fd6eb78737a3f683f20a8caedfcdba42b38ab31a3e87623398286c",
+    "source": "SEC EDGAR XBRL companyfacts API (https://data.sec.gov/api/xbrl/companyfacts/CIK0001341439.json)"
+  }
+}

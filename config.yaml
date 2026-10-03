@@ -1,0 +1,146 @@
+# =============================================================================
+# ORCL Quantitative Investment & AI Valuation Lab - central configuration
+# =============================================================================
+# Every number that is an ASSUMPTION (as opposed to data) lives in this file and
+# is labelled as such. Data is never typed in here - it is downloaded by the
+# pipeline and recorded in data/manifest.json with its source and retrieval date.
+# API keys are NEVER stored here: they are read from environment variables.
+#   SEC_USER_AGENT   optional  e.g. "Jane Doe jane@example.com" (SEC fair-access policy)
+#   FRED_API_KEY     optional  only needed if you prefer the FRED JSON API over the CSV endpoint
+# =============================================================================
+
+project:
+  ticker: ORCL
+  company: Oracle Corporation
+  cik: "0001341439"
+  fiscal_year_end_month: 5          # Oracle's fiscal year ends 31 May
+  currency: USD
+
+data:
+  start_date: "2010-01-01"          # price history start
+  end_date: null                    # null = today
+  benchmarks:                       # total-return ETF proxies (adjusted close)
+    sp500: SPY                      # S&P 500
+    nasdaq100: QQQ                  # Nasdaq 100
+    semis: SMH                      # semiconductors / AI-compute proxy
+  peers: [NVDA, MSFT, AMZN, GOOGL]
+  risk_free:
+    short: DGS3MO                   # FRED 3-month T-bill (Sharpe/Sortino, alpha)
+    long: DGS10                     # FRED 10-year Treasury (DCF risk-free)
+  fundamentals_start: "2010-06-01"  # first fiscal period kept from SEC XBRL
+  press_release_start: "2018-06-01" # earlier releases do not report cloud / RPO KPIs
+  sec_pause_seconds: 0.25           # SEC allows <=10 req/s; we stay well under
+
+analytics:
+  trading_days: 252
+  ma_windows: [20, 50, 100, 200]
+  rsi_window: 14
+  macd: {fast: 12, slow: 26, signal: 9}
+  atr_window: 14
+  vol_windows: [21, 63, 252]
+  rel_volume_window: 20
+  rolling_beta_window: 252
+  rolling_corr_window: 126
+  divergence:
+    window: 63                      # trading days over which relative performance is measured
+    z_threshold: 1.5                # |z| of ORCL-minus-peer-basket relative return
+    min_history: 504
+
+risk:
+  var_levels: [0.95, 0.99]
+  var_horizons_days: [1, 10]
+  monte_carlo:
+    n_sims: 20000                   # >= 10,000 required by the brief
+    horizon_days: 252
+    seed: 42
+    block_size: 21                  # block-bootstrap block length (~1 trading month)
+    drift: capm                     # capm | historical | zero  (see risk/montecarlo.py)
+    equity_risk_premium: 0.05       # ASSUMPTION used for the CAPM drift
+    start_value: 100.0
+
+valuation:
+  # --- Cost of capital (every input is either data or an explicitly flagged assumption) ---
+  equity_risk_premium: 0.05         # ASSUMPTION: long-run US equity risk premium (typical range 4-6%)
+  credit_spread: 0.015              # ASSUMPTION: BBB-area spread over the 10y Treasury for marginal debt
+  tax_rate_floor: 0.12              # effective tax rate is derived from filings and bounded
+  tax_rate_cap: 0.25
+  long_run_tax_rate: 0.18           # SCENARIO ASSUMPTION: between Oracle's observed ~12% GAAP rate and the ~21%+ statutory rate
+  tax_normalisation_years: 5        # effective tax rate converges to the long-run rate over this horizon
+  # --- Scenarios ---
+  scenario_probabilities: {bear: 0.25, base: 0.50, bull: 0.25}   # ASSUMPTION, user-adjustable
+  terminal_growth: {bear: 0.020, base: 0.030, bull: 0.035}      # SCENARIO ASSUMPTION (must stay < 10y yield)
+  # Scenarios sit at INTER-QUARTILE positions of each driver's observed range (not the extremes): stacking six drivers at their
+  # 10th/90th percentiles at once would describe a ~1-in-100 joint outcome, not a 1-in-4 scenario.
+  scenario_position: 0.25           # share of the way from the base value to the adverse/favourable end of a driver's range
+  margin_percentiles: {bear: 0.25, base: 0.50, bull: 0.75}      # EBITDA-margin target = percentile of Oracle's own 10y TTM history
+  multiple_percentiles: {bear: 0.25, base: 0.50, bull: 0.75}    # valuation multiple = percentile of Oracle's own multiple history
+  multiple_history_years: 10
+  margin_history_years: 10
+  margin_convergence_years: 5
+  capital_intensity_convergence_years: 9   # years for net PP&E / revenue to move from today's level to its terminal anchor
+  maintenance_capex_floor: 0.6             # capex never falls below this share of depreciation
+  depreciation_rate_multiplier: {bear: 1.15, base: 1.00, bull: 0.90}   # SCENARIO: asset-life uncertainty around the observed rate
+  terminal_excess_return_retention: 0.5    # SCENARIO: share of the terminal ROIC-over-WACC spread that new investment keeps earning
+  explicit_years: 10                # FY27 (remaining 9 months) ... FY36
+  # --- Blend of the four valuation methods for the headline range ---
+  method_weights: {dcf: 0.40, forward_pe: 0.20, ev_ebitda: 0.20, ev_revenue: 0.20}
+  # --- Balance-sheet stress thresholds used in the leverage path (ASSUMPTIONS, rating-agency-style rules of thumb) ---
+  stress: {net_debt_to_ebitda_max: 4.0, interest_cover_min: 3.0}
+  sensitivity:
+    wacc_step: 0.005
+    g_step: 0.005
+    growth_shift_pp: [-0.10, -0.05, 0.0, 0.05, 0.10]     # additive shift to OCI growth in FY29+
+    margin_shift_pp: [-0.06, -0.03, 0.0, 0.03, 0.06]     # additive shift to the terminal EBITDA margin
+    exit_multiples: [8.0, 10.0, 12.0, 14.0, 16.0, 18.0]  # EV/EBITDA applied to FY31E EBITDA
+    exit_year_offset: 4                                   # exit at the end of the 5th fiscal year (FY31)
+
+factor_model:
+  forward_horizon_days: 63          # prediction target for the walk-forward model (~1 quarter)
+  min_train_obs: 12                 # quarters
+  ridge_alphas: [1.0, 10.0, 100.0, 1000.0, 10000.0]
+  vif_warn: 5.0
+
+score:
+  weights:                          # MUST sum to 1.0 - deliberately NOT optimised on past returns
+    growth: 0.25
+    valuation: 0.20
+    momentum: 0.20
+    cash_flow: 0.15
+    balance_sheet: 0.10
+    market_risk: 0.10
+  min_history_quarters: 8           # expanding-window percentile needs at least this much history
+  bullish_threshold: 60
+  bearish_threshold: 40
+  forward_horizons_days: [63, 126, 252]
+
+signal:
+  # Experimental five-state classifier. Thresholds are quantiles of the composite z-score taken from
+  # the TRAINING sample only; exposure per state is fixed ex-ante (not fitted).
+  quantiles: {strong_bearish: 0.10, bearish: 0.30, bullish: 0.70, strong_bullish: 0.90}
+  exposure: {STRONG_BULLISH: 1.00, BULLISH: 0.75, NEUTRAL: 0.50, BEARISH: 0.25, STRONG_BEARISH: 0.00}
+  components: [momentum, valuation, earnings_revision, oci_growth, rpo_growth, fcf_trend]
+  rebalance_days: 5                 # signal evaluated weekly
+  min_holding_days: 10
+
+backtest:
+  train_end: "2022-12-31"           # everything up to here may be used to calibrate thresholds
+  cost_bps_per_side: 10             # ASSUMPTION: 5bp half-spread + 5bp impact/commission for a mega-cap
+  execution: next_open              # signal at close t -> trade at open t+1
+  initial_capital: 100000
+
+event_study:
+  estimation_window: [-250, -30]    # trading days relative to the reaction day
+  min_estimation_obs: 120
+  windows: {car_1d: [0, 0], car_3d: [0, 2], car_5d: [0, 4], car_20d: [0, 19]}
+  benchmark: sp500                  # market model benchmark (key in data.benchmarks)
+  robustness_benchmark: nasdaq100
+  reports_after_close: true         # Oracle publishes after the US close -> reaction day = next session
+
+conclusion:
+  # Deterministic, model-driven vote (no discretion). Five votes, each +1 / 0 / -1 (see reporting/conclusion.py).
+  upside_bull: 0.15                 # base-case AND probability-weighted blended value must both beat the price by this much for a +1 vote
+  upside_bear: -0.15
+  score_bull: 60
+  score_bear: 40
+  total_bull: 2                     # vote total >= +2 -> Bull
+  total_bear: -2                    # vote total <= -2 -> Bear
