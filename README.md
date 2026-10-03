@@ -117,6 +117,12 @@ orcl-lab all            # download -> validate -> analyse -> report -> charts  (
 
 Individual stages: `orcl-lab build`, `orcl-lab analyse`, `orcl-lab report`, `orcl-lab charts` (add `--cache` to reuse raw downloads). Optional: `FRED_API_KEY` for the FRED JSON API. Exact tested versions are in `requirements-lock.txt`.
 
+### Keeping the data fresh
+
+- **Automatically:** `.github/workflows/refresh-data.yml` runs every weekday at 22:30 UTC (after the US close) and does a quick refresh - prices, FRED rates and the analyst-consensus snapshot - then re-runs every model and the report and commits the new data. Every Saturday it also re-downloads SEC filings and earnings releases (add your contact string as a repository secret named `SEC_USER_AGENT`: *Settings -> Secrets and variables -> Actions*). Streamlit Cloud redeploys on each push and the dashboard rebuilds its analysis from the new data. The workflow can also be started by hand from the *Actions* tab.
+- **Manually:** `orcl-lab refresh` (no SEC access needed) or `orcl-lab all` (everything).
+- The figures quoted in this README and the PNG charts in `visualisations/` are a snapshot; the live numbers are in the dashboard and in `reports/orcl_research_report.md`. `orcl-lab charts` re-exports the images.
+
 ### Dashboard
 
 ```bash

@@ -42,8 +42,15 @@ def get_cfg():
     return load_config()
 
 
-@st.cache_resource(show_spinner="Preparing the analysis (first visit on a fresh install takes about a minute; later pages are instant)...")
-def get_bundle():
+def data_version() -> str:
+    """Fingerprint of the processed data (manifest content). Changes whenever the pipeline refreshes any dataset."""
+    import hashlib
+    p = get_cfg().path("data", "manifest.json")
+    return hashlib.sha256(p.read_bytes()).hexdigest()[:16] if p.exists() else "none"
+
+
+@st.cache_resource(show_spinner="Preparing the analysis (first visit after a data refresh takes about a minute; later pages are instant)...")
+def _load_bundle(version: str):
     # No st.* messages here: Streamlit replays elements from cached functions on every page.
     cfg = get_cfg()
     try:
@@ -52,9 +59,17 @@ def get_bundle():
         return run_all_analyses(cfg)
 
 
+def get_bundle():
+    return _load_bundle(data_version())
+
+
 @st.cache_resource(show_spinner="Building charts...")
+def _build_charts(price_start: str | None, version: str):
+    return build_all(_load_bundle(version), price_start)
+
+
 def get_charts(price_start: str | None):
-    return build_all(get_bundle(), price_start)
+    return _build_charts(price_start, data_version())
 
 
 def chart(key: str, price_start: str | None = "2018-01-01", height: int | None = None):

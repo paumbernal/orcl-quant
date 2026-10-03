@@ -10,9 +10,10 @@ from .config import load_config
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="orcl-lab", description="ORCL Quantitative Investment & AI Valuation Lab")
-    ap.add_argument("command", choices=["build", "analyse", "report", "charts", "all"],
+    ap.add_argument("command", choices=["build", "analyse", "report", "charts", "refresh", "all"],
                     help="build = download data; analyse = run every model; report = write the research report; "
-                         "charts = export static PNG charts; all = everything")
+                         "charts = export static PNG charts; refresh = quick update of prices, rates and consensus then re-run all models and the report "
+                         "(no SEC access needed); all = everything")
     ap.add_argument("--config", default=None, help="path to config.yaml")
     ap.add_argument("--cache", action="store_true", help="re-use data/raw instead of re-downloading")
     ap.add_argument("--steps", nargs="*", default=None, help="subset of build steps")
@@ -21,6 +22,13 @@ def main(argv: list[str] | None = None) -> int:
     logging.basicConfig(level=logging.INFO if args.verbose else logging.WARNING, format="%(levelname)s %(name)s: %(message)s")
     cfg = load_config(args.config)
 
+    if args.command == "refresh":
+        from .data.pipeline import run_pipeline
+        from .reporting.report import write_report
+        from .reporting.runner import run_all_analyses
+        run_pipeline(cfg, ("prices", "riskfree", "consensus", "fundamentals"), use_cache=False)
+        run_all_analyses(cfg)
+        print(f"refreshed -> report written to {write_report(cfg)}")
     if args.command in ("build", "all"):
         from .data.pipeline import STEPS, run_pipeline
         run_pipeline(cfg, args.steps or STEPS, use_cache=args.cache)

@@ -1,0 +1,73 @@
+name: refresh data
+
+# Weekdays 22:30 UTC (after the US close in both summer and winter time): quick refresh of prices, FRED rates and the
+# analyst-consensus snapshot, then every model and the report are re-run and the new data are committed to the repo.
+# Saturdays 06:00 UTC: a FULL refresh that also re-downloads SEC filings and earnings releases (needs the SEC_USER_AGENT secret).
+# Streamlit Community Cloud redeploys on each push and the dashboard rebuilds its analysis from the new data.
+on:
+  schedule:
+    - cron: "30 22 * * 1-5"
+    - cron: "0 6 * * 6"
+  workflow_dispatch:
+    inputs:
+      full:
+        description: "Also re-download SEC filings and earnings releases (requires the SEC_USER_AGENT secret)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -e .
+
+      - name: Decide refresh mode
+        id: mode
+        run: |
+          if [ "${{ github.event.schedule }}" = "0 6 * * 6" ] || [ "${{ inputs.full }}" = "true" ]; then
+            if [ -n "$SEC_USER_AGENT" ]; then echo "mode=full" >> "$GITHUB_OUTPUT"; else echo "mode=quick" >> "$GITHUB_OUTPUT"; echo "::warning::SEC_USER_AGENT secret not set - running the quick refresh only"; fi
+          else
+            echo "mode=quick" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Quick refresh (prices, rates, consensus -> models -> report)
+        if: steps.mode.outputs.mode == 'quick'
+        run: orcl-lab refresh
+
+      - name: Full refresh (everything incl. SEC filings -> models -> report)
+        if: steps.mode.outputs.mode == 'full'
+        run: |
+          orcl-lab build
+          orcl-lab analyse
+          orcl-lab report
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/processed data/manifest.json data/snapshots models/*.csv reports
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Data refresh $(date -u +%Y-%m-%d) (${{ steps.mode.outputs.mode }})"
+            for i in 1 2 3; do git pull --rebase -q && git push && break || sleep 5; done
+          fi
