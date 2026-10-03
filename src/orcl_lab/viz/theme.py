@@ -54,11 +54,19 @@ def span(idx) -> str:
 def style(fig: go.Figure, title: str, x_title: str | None = None, y_title: str | None = None, height: int = 430,
           legend: bool = True, y_tickformat: str | None = None, x_tickformat: str | None = None, hover: str = "x unified") -> go.Figure:
     fig.update_layout(
-        title=dict(text=title, x=0.0, xanchor="left", font=dict(size=16, color=INK, family=FONT)),
+        title=dict(text=title, x=0.0, xanchor="left", xref="paper", yref="container", y=1.0, yanchor="top", pad=dict(t=14),
+                   font=dict(size=16, color=INK, family=FONT)),
         template="none", paper_bgcolor=SURFACE, plot_bgcolor=SURFACE, font=dict(family=FONT, size=12, color=INK2),
         height=height, margin=dict(l=64, r=24, t=64, b=64), hovermode=hover, showlegend=legend,
         legend=dict(orientation="h", yanchor="bottom", y=1.0, xanchor="left", x=0.0, font=dict(size=11, color=INK2), bgcolor="rgba(0,0,0,0)"),
     )
+    # Subplot titles (make_subplots annotations) sit just above each panel. A legend anchored at the same height would print on top of
+    # them, so when subplot titles exist the legend is lifted clear of them and the top margin enlarged to make room.
+    has_sub_titles = any(a.yref == "paper" and a.yanchor == "bottom" and not a.showarrow for a in (fig.layout.annotations or []))
+    if legend and has_sub_titles:
+        top, bottom = 120, 64
+        plot_h = max(height - top - bottom, 100)
+        fig.update_layout(margin=dict(l=64, r=24, t=top, b=bottom), legend=dict(y=1.0 + 56.0 / plot_h))
     fig.update_xaxes(showgrid=False, linecolor=AXIS, tickfont=dict(color=MUTED), title_text=x_title, title_font=dict(color=INK2, size=12),
                      zeroline=False, tickformat=x_tickformat, automargin=True)
     fig.update_yaxes(gridcolor=GRID, gridwidth=1, linecolor="rgba(0,0,0,0)", tickfont=dict(color=MUTED), title_text=y_title,
