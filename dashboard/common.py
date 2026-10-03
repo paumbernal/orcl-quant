@@ -42,13 +42,13 @@ def get_cfg():
     return load_config()
 
 
-@st.cache_resource(show_spinner="Loading analysis bundle...")
+@st.cache_resource(show_spinner="Preparing the analysis (first visit on a fresh install takes about a minute; later pages are instant)...")
 def get_bundle():
+    # No st.* messages here: Streamlit replays elements from cached functions on every page.
     cfg = get_cfg()
     try:
         return load_bundle(cfg, rebuild_if_missing=False)
     except FileNotFoundError:
-        st.warning("No cached analysis found - computing it now (about 30 seconds). Run `orcl-lab all` once to avoid this.")
         return run_all_analyses(cfg)
 
 
