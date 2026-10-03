@@ -39,6 +39,7 @@ where = ["src"]
 testpaths = ["tests"]
 pythonpath = ["src"]
 filterwarnings = [
+    "ignore::RuntimeWarning",
     "ignore::DeprecationWarning",
     "ignore::FutureWarning",
 ]

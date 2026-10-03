@@ -62,7 +62,8 @@ def simulate(ohlc: pd.DataFrame, exposure_decided: pd.Series, rf_daily: pd.Serie
     pos_old = pos_new.shift(1)
     valid = pos_new.notna() & pos_old.notna()
     rf = rf_daily.reindex(ohlc.index).ffill()
-    ret = pos_old * overnight + pos_new * intraday + (1 - 0.5 * (pos_old + pos_new)) * rf
+    # the overnight and intraday legs compound (adding them would misstate returns whenever the two legs are correlated)
+    ret = (1 + pos_old * overnight) * (1 + pos_new * intraday) - 1 + (1 - 0.5 * (pos_old + pos_new)) * rf
     turnover = (pos_new - pos_old).abs()
     ret = ret - turnover * cost_bps / 1e4
     out = pd.DataFrame({"ret": ret, "exposure": pos_new, "turnover": turnover})

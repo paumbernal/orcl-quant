@@ -211,7 +211,7 @@ def parse_guidance(text: str) -> dict[str, float]:
         if not m:
             return None
         rest = seg[m.start(): m.start() + 420]
-        c = re.search(r"\ufffd|\u2022|\sNon-GAAP earnings", rest[20:], re.I)
+        c = re.search(r"\ufffd|\u2022|\sNon-GAAP earnings|(?<=[A-Za-z%])\.\s+(?=[A-Z])", rest[20:], re.I)
         return rest[: 20 + c.start()] if c else rest
 
     s1 = sentence(r"Total revenues? (?:are|is) expected to grow")
