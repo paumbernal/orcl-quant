@@ -1,6 +1,6 @@
 # ORCL Quantitative Investment & AI Valuation Lab
 
-An institutional-style equity-research and quantitative-research project on **Oracle Corporation (NYSE: ORCL)**, built end to end in Python: a reproducible data pipeline, financial modelling, a four-method valuation engine with bear/base/bull scenarios, a risk engine with Monte Carlo, statistical factor models, an earnings event study, a transparent investment score, an honestly-backtested experimental signal, a nine-page Streamlit dashboard and an auto-generated research report.
+An institutional-style equity-research and quantitative-research project on **Oracle Corporation (NYSE: ORCL)**, built end to end in Python: a reproducible data pipeline, financial modelling, a four-method valuation engine with bear/base/bull scenarios, a risk engine with Monte Carlo, statistical factor models, an earnings event study, a transparent investment score, an honestly-backtested experimental signal, a ten-page Streamlit dashboard and an auto-generated research report.
 
 > **Central research question.** *Can Oracle's AI/cloud growth justify its valuation and rapidly increasing capital requirements, and what does a quantitative model imply about the stock's expected risk/reward?*
 
@@ -88,7 +88,7 @@ src/orcl_lab/
   models/                   features, factor models, score, event study, signal, backtest
   viz/                      Plotly charts + static export
   reporting/                analysis runner, conclusion rule, report generator
-dashboard/                  Streamlit app (9 pages)
+dashboard/                  Streamlit app (10 pages)
 models/                     CSV outputs of every model
 reports/                    auto-generated research report
 visualisations/             all chart PNGs
@@ -123,7 +123,7 @@ Individual stages: `orcl-lab build`, `orcl-lab analyse`, `orcl-lab report`, `orc
 streamlit run dashboard/app.py
 ```
 
-Pages: 1 Executive summary - 2 Price & technicals - 3 Fundamentals - 4 AI/RPO - 5 Valuation (with an interactive DCF explorer and the assumption log) - 6 Factor model & event study - 7 Risk & Monte Carlo (run your own simulation) - 8 Scenario analysis - 9 Investment score (live weight sliders, signal and backtest).
+Pages: 1 Project overview & full research report - 2 Executive summary - 3 Price & technicals - 4 Fundamentals - 5 AI/RPO - 6 Valuation (interactive DCF explorer and assumption log) - 7 Factor model & event study - 8 Risk & Monte Carlo (run your own simulation) - 9 Scenario analysis - 10 Investment score (live weight sliders, signal and backtest).
 
 ### Tests
 

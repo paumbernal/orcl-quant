@@ -14,6 +14,58 @@ from orcl_lab.valuation.model import project, value_dcf
 from orcl_lab.viz import theme as T
 
 
+
+# =============================================================================================== 0 (page 1 in the sidebar)
+def page_overview():
+    b, cfg = get_bundle(), get_cfg()
+    st.title("ORCL Quantitative Investment & AI Valuation Lab")
+    st.markdown("*Can Oracle's AI/cloud growth justify its valuation and rapidly increasing capital requirements - and what does a quantitative model imply about risk/reward?*")
+    st.markdown(":blue[HISTORICAL DATA] :orange[CONSENSUS FORECAST] :violet[ASSUMPTION] :green[MODEL OUTPUT]")
+
+    st.subheader("About this project")
+    st.markdown(
+        """
+An institutional-style equity-research and quantitative-research project on **Oracle Corporation (NYSE: ORCL)**, built end to end in Python. It is **not** a stock-prediction toy: there is no 'AI predicts the price' model and no accuracy claim - where the evidence shows no edge, the project says so.
+
+- **Data** - prices, SEC filings (XBRL), Oracle's earnings releases, FRED rates and a dated analyst-consensus snapshot, each recorded with its source and retrieval date.
+- **Fundamentals & AI/RPO** - how contracted backlog turns into revenue, operating income, operating cash flow and free cash flow, and what that growth costs in capex.
+- **Valuation** - forward P/E, EV/EBITDA, EV/Revenue and a DCF under bear/base/bull scenarios, every assumption traced to data, consensus or a stated scenario assumption, plus sensitivity tables and a reverse DCF.
+- **Risk** - VaR/Expected Shortfall and a 20,000-path Monte Carlo under four return models, showing why a normal distribution understates tail risk.
+- **Statistical models** - factor attribution, rolling regressions, out-of-sample testing and an earnings event study, with explicit warnings about overfitting, multicollinearity and look-ahead bias.
+- **Score & signal** - a transparent 0-100 score and an experimental five-state signal, backtested with costs and a train/test split.
+
+Use the pages on the left: **2** executive summary - **3** price & technicals - **4** fundamentals - **5** AI/RPO - **6** valuation - **7** factor model - **8** risk & Monte Carlo - **9** scenarios - **10** investment score.
+        """
+    )
+
+    v, sc = b.val, b.val.scenarios
+    score = float(b.score["score_live"].dropna().iloc[-1])
+    c = st.columns(5)
+    c[0].metric("Price", fmt_usd(b.meta["price"], 2), help=f"Close {b.meta['price_date']}")
+    c[1].metric("Base-case value", fmt_usd(sc["base"].blended), f"{sc['base'].blended / b.meta['price'] - 1:+.0%}")
+    c[2].metric("Bear - Bull", f"{fmt_usd(sc['bear'].blended)} to {fmt_usd(sc['bull'].blended)}")
+    c[3].metric("Investment score", f"{score:.0f} / 100")
+    c[4].metric("Model conclusion", b.conclusion["label"], f"vote total {b.conclusion['total']:+d}", delta_color="off")
+    st.caption(f"Data as of the {b.meta['price_date']} close; latest reported quarter {b.meta['latest_quarter']}; consensus snapshot {b.meta['consensus_date']}. "
+               "The conclusion is the output of a fixed five-vote rule applied to model outputs, not a discretionary view. Research and education only - not investment advice.")
+
+    st.divider()
+    st.header("Research report")
+    st.caption("Generated automatically from the analysis results (`orcl-lab report` writes the same text to `reports/orcl_research_report.md`). Every number is read from the models; every verdict is conditional on stated thresholds.")
+    sections = build_sections(b, cfg)
+    from orcl_lab.reporting.report import render_markdown
+    st.download_button("Download the report (Markdown)", render_markdown(sections).encode("utf-8"), "orcl_research_report.md", mime="text/markdown")
+    for title, body in sections:
+        if title == "Summary":
+            st.markdown(body.partition("\n\n")[2] if body.startswith("# ") else body)       # drop the duplicate H1; the page title is above
+        elif title == "Model-driven conclusion":
+            st.divider()
+            st.header("Conclusion")
+            st.markdown(body)
+        else:
+            st.subheader(title)
+            st.markdown(body)
+
 # =============================================================================================== 1
 def page_summary():
     b, cfg = get_bundle(), get_cfg()
@@ -40,14 +92,7 @@ def page_summary():
     st.caption(b.conclusion["rule"] + " The conclusion is the output of this fixed rule applied to model outputs - not a subjective view.")
 
     chart("football")
-    st.subheader("Research report")
-    st.caption("Generated automatically from the analysis bundle (`orcl-lab report` writes the same text to `reports/orcl_research_report.md`).")
-    for i, (title, body) in enumerate(build_sections(b, cfg)):
-        if title in ("Summary",):
-            st.markdown(body)
-        else:
-            with st.expander(title, expanded=(i == 1)):
-                st.markdown(body)
+    st.info("The full research report - answering the nine questions in the brief - is on page 1 (Project overview & research report).")
 
     st.subheader("Data provenance")
     man = get_cfg().path("data", "manifest.json")

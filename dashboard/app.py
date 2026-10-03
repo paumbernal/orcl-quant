@@ -17,15 +17,16 @@ from common import get_bundle  # noqa: E402
 import pages_impl as P  # noqa: E402
 
 PAGES = [
-    st.Page(P.page_summary, title="1. Executive summary", url_path="summary", default=True),
-    st.Page(P.page_price, title="2. Price & technical analysis", url_path="price"),
-    st.Page(P.page_fundamentals, title="3. Fundamentals", url_path="fundamentals"),
-    st.Page(P.page_rpo, title="4. AI / RPO analysis", url_path="rpo"),
-    st.Page(P.page_valuation, title="5. Valuation", url_path="valuation"),
-    st.Page(P.page_factor, title="6. Quantitative factor model", url_path="factor"),
-    st.Page(P.page_risk, title="7. Risk & Monte Carlo", url_path="risk"),
-    st.Page(P.page_scenarios, title="8. Scenario analysis", url_path="scenarios"),
-    st.Page(P.page_score, title="9. Investment score", url_path="score"),
+    st.Page(P.page_overview, title="1. Project overview & research report", url_path="overview", default=True),
+    st.Page(P.page_summary, title="2. Executive summary", url_path="summary"),
+    st.Page(P.page_price, title="3. Price & technical analysis", url_path="price"),
+    st.Page(P.page_fundamentals, title="4. Fundamentals", url_path="fundamentals"),
+    st.Page(P.page_rpo, title="5. AI / RPO analysis", url_path="rpo"),
+    st.Page(P.page_valuation, title="6. Valuation", url_path="valuation"),
+    st.Page(P.page_factor, title="7. Quantitative factor model", url_path="factor"),
+    st.Page(P.page_risk, title="8. Risk & Monte Carlo", url_path="risk"),
+    st.Page(P.page_scenarios, title="9. Scenario analysis", url_path="scenarios"),
+    st.Page(P.page_score, title="10. Investment score", url_path="score"),
 ]
 
 b = get_bundle()
