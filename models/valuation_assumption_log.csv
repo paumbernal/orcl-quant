@@ -20,21 +20,21 @@ bear,"OCI growth persistence (annual, FY29-31)",0.43,DATA,"Excess growth over th
 base,"OCI growth persistence (annual, FY29-31)",0.54,DATA,Excess growth over the terminal rate decays by this factor each year (midpoint of the two regimes' annualised AR(1) estimates). Regime break = first quarter RPO grew >100% YoY (2025-08-31).
 bull,"OCI growth persistence (annual, FY29-31)",0.64,DATA,"Excess growth over the terminal rate decays by this factor each year (25% of the way from the full-sample estimate (0.75: AR(1) 0.93, se 0.08, n=60, growth is persistent in the AI regime) toward the pre-break estimate). Regime break = first quarter RPO grew >100% YoY (2025-08-31)."
 all,Tax rate,12.9% -> 18.0%,DATA / SCENARIO,"Starts at the TTM effective rate (DATA, bounded 12%-25%) and normalises over 5 years to a long-run 18% (SCENARIO: Oracle's 10y median effective rate was 12.2%; statutory US federal is 21%)."
-all,Beta (Blume-adjusted),"2y: 1.43, 5y: 1.15, full: 1.05",DATA,"OLS beta of daily excess returns vs the S&P 500 (SPY) over 2y / 5y / full history, adjusted 0.67*raw + 0.33. Bear uses the highest, base the median, bull the lowest."
-all,Interest rate on existing net debt,4.4% -> 6.8%,DATA,"TTM interest expense / average gross debt, rising to the marginal cost (10y Treasury 5.28% + 1.5% spread [SCENARIO]) as debt refinances over 5 years."
-bear,"Valuation multiples (P/E, EV/EBITDA, EV/Revenue)",19.5x / 13.1x / 5.6x,DATA,25th percentile of Oracle's own trailing multiples over 10 years (today 22.3x / 15.6x / 7.4x).
-base,"Valuation multiples (P/E, EV/EBITDA, EV/Revenue)",27.5x / 16.6x / 6.6x,DATA,50th percentile of Oracle's own trailing multiples over 10 years (today 22.3x / 15.6x / 7.4x).
-bull,"Valuation multiples (P/E, EV/EBITDA, EV/Revenue)",37.5x / 20.4x / 8.0x,DATA,75th percentile of Oracle's own trailing multiples over 10 years (today 22.3x / 15.6x / 7.4x).
-bear,Revenue FY27 ($m),"89,098",CONSENSUS,Lowest analyst estimate in the snapshot (2026-10-06).
+all,Beta (Blume-adjusted),"2y: 1.43, 5y: 1.15, full: 1.06",DATA,"OLS beta of daily excess returns vs the S&P 500 (SPY) over 2y / 5y / full history, adjusted 0.67*raw + 0.33. Bear uses the highest, base the median, bull the lowest."
+all,Interest rate on existing net debt,4.4% -> 6.8%,DATA,"TTM interest expense / average gross debt, rising to the marginal cost (10y Treasury 5.31% + 1.5% spread [SCENARIO]) as debt refinances over 5 years."
+bear,"Valuation multiples (P/E, EV/EBITDA, EV/Revenue)",19.5x / 13.1x / 5.6x,DATA,25th percentile of Oracle's own trailing multiples over 10 years (today 22.7x / 15.8x / 7.5x).
+base,"Valuation multiples (P/E, EV/EBITDA, EV/Revenue)",27.5x / 16.6x / 6.6x,DATA,50th percentile of Oracle's own trailing multiples over 10 years (today 22.7x / 15.8x / 7.5x).
+bull,"Valuation multiples (P/E, EV/EBITDA, EV/Revenue)",37.5x / 20.4x / 8.0x,DATA,75th percentile of Oracle's own trailing multiples over 10 years (today 22.7x / 15.8x / 7.5x).
+bear,Revenue FY27 ($m),"89,098",CONSENSUS,Lowest analyst estimate in the snapshot (2026-10-07).
 base,Revenue FY27 ($m),"90,449",CONSENSUS,Mean of 37 analysts.
 bull,Revenue FY27 ($m),"91,688",CONSENSUS,Highest analyst estimate in the snapshot.
-bear,Revenue FY28 ($m),"117,920",CONSENSUS,Lowest analyst estimate in the snapshot (2026-10-06).
+bear,Revenue FY28 ($m),"117,920",CONSENSUS,Lowest analyst estimate in the snapshot (2026-10-07).
 base,Revenue FY28 ($m),"131,711",CONSENSUS,Mean of 39 analysts.
 bull,Revenue FY28 ($m),"139,642",CONSENSUS,Highest analyst estimate in the snapshot.
-bear,Terminal growth,2.0%,SCENARIO,Stated scenario assumption; must stay below the 10-year Treasury yield (5.28%) and long-run nominal GDP growth.
+bear,Terminal growth,2.0%,SCENARIO,Stated scenario assumption; must stay below the 10-year Treasury yield (5.31%) and long-run nominal GDP growth.
 bear,Scenario probability,25%,SCENARIO,Subjective weight used only for the probability-weighted value.
-base,Terminal growth,3.0%,SCENARIO,Stated scenario assumption; must stay below the 10-year Treasury yield (5.28%) and long-run nominal GDP growth.
+base,Terminal growth,3.0%,SCENARIO,Stated scenario assumption; must stay below the 10-year Treasury yield (5.31%) and long-run nominal GDP growth.
 base,Scenario probability,50%,SCENARIO,Subjective weight used only for the probability-weighted value.
-bull,Terminal growth,3.5%,SCENARIO,Stated scenario assumption; must stay below the 10-year Treasury yield (5.28%) and long-run nominal GDP growth.
+bull,Terminal growth,3.5%,SCENARIO,Stated scenario assumption; must stay below the 10-year Treasury yield (5.31%) and long-run nominal GDP growth.
 bull,Scenario probability,25%,SCENARIO,Subjective weight used only for the probability-weighted value.
 all,Equity risk premium,5.0%,SCENARIO,Stated assumption (typical long-run range 4-6%).
