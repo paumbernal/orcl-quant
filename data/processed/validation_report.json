@@ -43,7 +43,7 @@
     {
       "check": "price data is recent",
       "passed": true,
-      "detail": "last bar 2026-10-07"
+      "detail": "last bar 2026-10-08"
     },
     {
       "check": "cloud = OCI + SaaS where all three parsed",
@@ -54,5 +54,5 @@
   "warnings": [],
   "n_quarters": 65,
   "latest_quarter": "2026-08-31",
-  "price_last_date": "2026-10-07"
+  "price_last_date": "2026-10-08"
 }
