@@ -1,6 +1,6 @@
 # ORCL Quantitative Investment & AI Valuation Lab - Research Report
 
-**Oracle Corporation (NYSE: ORCL)** | price $141.40 at the 2026-10-09 close | latest reported quarter FY27 Q1 (ended 2026-08-31) | consensus snapshot 2026-10-10 | generated 2026-10-10 01:52 UTC
+**Oracle Corporation (NYSE: ORCL)** | price $141.40 at the 2026-10-09 close | latest reported quarter FY27 Q1 (ended 2026-08-31) | consensus snapshot 2026-10-10 | generated 2026-10-10 11:44 UTC
 
 > **How to read this.** Every figure is either *historical data* (SEC filings, exchange prices, FRED rates - with source and retrieval date in `data/manifest.json`), a *consensus forecast* (a dated Yahoo Finance snapshot), a *stated assumption* (`config.yaml`, with the derivation logged in `models/valuation_assumption_log.csv`) or a *model output*. The conclusion at the end is the output of a fixed voting rule - not a discretionary view. This is research, not investment advice.
 
@@ -23,21 +23,21 @@
 
 ## 2. Is the current valuation justified?
 
-**Relative to its own history**, Oracle trades at 22.2x trailing GAAP earnings (41st percentile of the last 10 years), 15.5x EV/EBITDA (41st) and 7.3x EV/revenue (64th). Versus AI/cloud peers (Yahoo, current) its forward P/E is 12.9x against 23.0x median - but its EV multiples carry a $97bn net-debt burden and its capital intensity is far higher.
+**Relative to its own history**, Oracle trades at 22.2x trailing GAAP earnings (41st percentile of the last 10 years), 15.5x EV/EBITDA (41st) and 7.3x EV/revenue (64th). Versus AI/cloud peers (Yahoo, current) its forward P/E is 12.9x against 22.9x median - but its EV multiples carry a $97bn net-debt burden and its capital intensity is far higher.
 
 **Scenario valuation** (four methods blended with the weights in `config.yaml`; DCF 40%):
 
 |  | DCF | Forward P/E | EV/EBITDA | EV/Revenue | Blended | Upside vs price |
 |---|---|---|---|---|---|---|
 | Bear | $31 | $90 | $130 | $119 | $80 | -43% |
-| Base | $169 | $162 | $190 | $160 | $170 | +20% |
+| Base | $168 | $162 | $190 | $160 | $170 | +20% |
 | Bull | $546 | $267 | $264 | $212 | $367 | +160% |
 
 Probability-weighted value (25%/50%/25%): **$197** (+39% vs price). Base-case blended value is +20% vs price, i.e. the price sits **below** the base case. The scenario spread is wide and right-skewed (bear -43%, bull +160%) because growth, margin and capital intensity compound.
 
 **What the price implies (reverse DCF).** Holding every other base-case assumption fixed, today's price is consistent with OCI growth running -3.0pp per year relative to the base path from FY29 (FY31 revenue $236bn vs $248bn in the base case), or with a terminal EBITDA margin of 38.5% vs 41.3%.
 
-**Sensitivity of the base-case DCF ($169 per share):** +5pp/yr OCI growth from FY29 = $52; -5pp = -$43; +/-3pp terminal EBITDA margin = $29 / -$29; +/-0.5pp WACC = $22 / -$19.
+**Sensitivity of the base-case DCF ($168 per share):** +5pp/yr OCI growth from FY29 = $52; -5pp = -$43; +/-3pp terminal EBITDA margin = $29 / -$29; +/-0.5pp WACC = $22 / -$19.
 
 **Is the valuation justified?** On this model the current price is less than the base-case value, so the market is discounting a path somewhat worse than the base case. The answer is **conditional**: the valuation is justified if OCI growth and margins stay within a few points of the base path *and* the capital intensity converges toward hyperscaler levels; it is not if the bear drivers materialise (value $80). Terminal value is 78% of base-case EV, so the answer hinges on the post-FY36 business and the 9.7% cost of capital.
 
@@ -100,7 +100,7 @@ Stress limits (assumptions in `config.yaml`): net debt/EBITDA <= 4.0x, interest 
 |---|---|---|---|---|---|---|---|
 | normal | 10.7% | 5.1% | -38.1% | 79.1% | 44.0% | -45.5% | 3.8% |
 | student_t | 10.4% | 5.8% | -36.6% | 72.4% | 42.7% | -47.1% | 3.5% |
-| garch_t | 10.2% | 4.4% | -46.8% | 81.3% | 44.5% | -64.1% | 11.1% |
+| garch_t | 10.2% | 4.2% | -46.7% | 81.1% | 44.5% | -64.2% | 11.1% |
 | bootstrap | 9.9% | 5.7% | -37.1% | 70.2% | 42.3% | -45.4% | 4.0% |
 
 A normal distribution understates tail risk for this stock (excess kurtosis 33; 14 days beyond -4 sd vs 0.13 expected), and volatility clusters, so the GARCH and bootstrap rows are the more realistic ones.
@@ -124,15 +124,15 @@ A normal distribution understates tail risk for this stock (excess kurtosis 33; 
 
 ## 8. What price range does the scenario model imply?
 
-The scenario model implies a **blended value range of $80 - $367** with a base case of **$170** (DCF only: $31 / $169 / $546), and a probability-weighted value of **$197**. The current price is $141.40.
+The scenario model implies a **blended value range of $80 - $367** with a base case of **$170** (DCF only: $31 / $168 / $546), and a probability-weighted value of **$197**. The current price is $141.40.
 
 |  | DCF | Forward P/E | EV/EBITDA | EV/Revenue | Blended | Upside vs price |
 |---|---|---|---|---|---|---|
 | Bear | $31 | $90 | $130 | $119 | $80 | -43% |
-| Base | $169 | $162 | $190 | $160 | $170 | +20% |
+| Base | $168 | $162 | $190 | $160 | $170 | +20% |
 | Bull | $546 | $267 | $264 | $212 | $367 | +160% |
 
-For comparison: the Monte Carlo 12-month price distribution (GARCH-t, current price as start) has a 5th / median / 95th percentile of $75 / $148 / $256; sell-side targets are $110 / $238 / $400 (low / mean / high; consensus snapshot, not data). The scenario values describe what the business is worth under stated assumptions, the Monte Carlo describes where the *price* may trade; they answer different questions.
+For comparison: the Monte Carlo 12-month price distribution (GARCH-t, current price as start) has a 5th / median / 95th percentile of $75 / $147 / $256; sell-side targets are $110 / $238 / $400 (low / mean / high; consensus snapshot, not data). The scenario values describe what the business is worth under stated assumptions, the Monte Carlo describes where the *price* may trade; they answer different questions.
 
 **Researcher degrees of freedom (disclosed).** Modelling choices made *after* seeing an intermediate result, and why:
 1. *Scenario positions.* A first version put every scenario driver at the 10th/90th percentile of its range simultaneously; that produced implausible joint extremes (bull value above $1,000/share, bear equity worth roughly zero). Drivers were moved to inter-quartile positions (`valuation.scenario_position`, `margin_percentiles`) - a judgement about joint plausibility, not a fit to the current price.
@@ -143,7 +143,7 @@ Method weights, scenario probabilities, score weights, signal components/quantil
 
 ## 9. What metrics should investors monitor next quarter?
 
-**Next earnings release: 2026-12-10** (Q2 FY27; consensus EPS $1.89).
+**Next earnings release: 2026-12-14** (Q2 FY27; consensus EPS $1.89).
 
 | Metric | Latest | What to look for |
 |---|---|---|
