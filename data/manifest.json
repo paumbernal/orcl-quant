@@ -3,8 +3,8 @@
     "file": "/home/runner/work/orcl-quant/orcl-quant/data/processed/consensus_snapshot.json",
     "kind": "CONSENSUS",
     "notes": "Forecasts are third-party opinions, not data. consensus_history.csv appends one row per period per run.",
-    "retrieved_at_utc": "2026-10-16T00:33:23Z",
-    "sha256": "ede922b3f34696cb3c3c67c2ce145ff9204e3430306df4109de3d32ab04c5091",
+    "retrieved_at_utc": "2026-10-17T00:41:00Z",
+    "sha256": "67960dc2d8a57db431228a706f74e91f7d6f54fec5b9b49e0d762decbb307e8b",
     "source": "Yahoo Finance analyst consensus (forward EPS / revenue, revisions, price targets) - a dated SNAPSHOT, not history"
   },
   "earnings_events": {
@@ -24,7 +24,7 @@
     "kind": "HISTORICAL",
     "last_date": "2026-05-31",
     "notes": "",
-    "retrieved_at_utc": "2026-10-16T00:33:23Z",
+    "retrieved_at_utc": "2026-10-17T00:41:00Z",
     "rows": 16,
     "sha256": "6c723ddca130f997e29cc0e04cf7fb616e21d7a9beb90357919f09370d37513c",
     "source": "SEC EDGAR XBRL (10-K fiscal-year values)"
@@ -46,7 +46,7 @@
     "kind": "HISTORICAL",
     "last_date": "2026-08-31",
     "notes": "USD in $ millions. avail_date = first session reflecting the release (point-in-time safe).",
-    "retrieved_at_utc": "2026-10-16T00:33:23Z",
+    "retrieved_at_utc": "2026-10-17T00:41:00Z",
     "rows": 65,
     "sha256": "1b9c9e098fbaa1c5c58ae95f257f06a57e0958ee8b29d1fb811f2e6a60ffeb58",
     "source": "SEC EDGAR XBRL + Oracle earnings releases (derived ratios computed in analytics/fundamentals.py)"
@@ -66,11 +66,11 @@
     "file": "/home/runner/work/orcl-quant/orcl-quant/data/processed/ohlcv_ORCL.csv",
     "first_date": "2010-01-04",
     "kind": "HISTORICAL",
-    "last_date": "2026-10-15",
+    "last_date": "2026-10-16",
     "notes": "",
-    "retrieved_at_utc": "2026-10-16T00:33:21Z",
-    "rows": 4222,
-    "sha256": "43770c8afdcfe8276f1828336d3c91dc0d042f46f4f0417aa0ae6c80b1184c98",
+    "retrieved_at_utc": "2026-10-17T00:40:57Z",
+    "rows": 4223,
+    "sha256": "21b951ea2176e431691621434b4aa45df1a957c5ee1ae0cfb5636bbde848a35c",
     "source": "Yahoo Finance via yfinance (auto_adjust=False; adj_close is dividend-adjusted)"
   },
   "peer_fundamentals": {
@@ -98,9 +98,9 @@
     "kind": "HISTORICAL",
     "last_date": "2026-10-15",
     "notes": "Benchmarks use total-return ETF proxies: SPY (S&P 500), QQQ (Nasdaq 100), SMH (semiconductors).",
-    "retrieved_at_utc": "2026-10-16T00:33:21Z",
+    "retrieved_at_utc": "2026-10-17T00:40:57Z",
     "rows": 4222,
-    "sha256": "c5852009c1e31b7a7bd0f2ecc06023654228343587be028a8639da16c4514e89",
+    "sha256": "824eceb10daa96c7b8f232f3d1405101f7b57ef304feadefbac93adce20bca47",
     "source": "Yahoo Finance via yfinance (auto_adjust=False; adj_close is dividend-adjusted)",
     "tickers": [
       "ORCL",
@@ -119,7 +119,7 @@
     "kind": "HISTORICAL",
     "last_date": "2026-10-15",
     "notes": "Benchmarks use total-return ETF proxies: SPY (S&P 500), QQQ (Nasdaq 100), SMH (semiconductors).",
-    "retrieved_at_utc": "2026-10-16T00:33:21Z",
+    "retrieved_at_utc": "2026-10-17T00:40:57Z",
     "rows": 4222,
     "sha256": "ab1099b62e9af91d3d654c7d9b955ddf0343de05d50af80370c66e196a9ceccc",
     "source": "Yahoo Finance via yfinance (auto_adjust=False; adj_close is dividend-adjusted)",
@@ -140,9 +140,9 @@
     "kind": "HISTORICAL",
     "last_date": "2026-10-15",
     "notes": "Benchmarks use total-return ETF proxies: SPY (S&P 500), QQQ (Nasdaq 100), SMH (semiconductors).",
-    "retrieved_at_utc": "2026-10-16T00:33:21Z",
+    "retrieved_at_utc": "2026-10-17T00:40:57Z",
     "rows": 4222,
-    "sha256": "22377a5985aef15fbad378afee47f25fb62f82cf9a19e1a36b4498b84944ad14",
+    "sha256": "48db22859aa6e49e7508c97faa3204734da50672fac67df5b0e07711a438f2b2",
     "source": "Yahoo Finance via yfinance (auto_adjust=False; adj_close is dividend-adjusted)",
     "tickers": [
       "ORCL",
@@ -161,9 +161,9 @@
     "kind": "HISTORICAL",
     "last_date": "2026-10-15",
     "notes": "Annualised decimal rates, forward-filled to trading days. rf_3m is used for Sharpe/Sortino/alpha, rf_10y for the DCF.",
-    "retrieved_at_utc": "2026-10-16T00:33:21Z",
+    "retrieved_at_utc": "2026-10-17T00:40:57Z",
     "rows": 4222,
-    "sha256": "4c1a0a3a61134e556b0d05f855e2c94d82a428f62e9f4e5654ca5acda0e03224",
+    "sha256": "930c177979617dc377626c2fd3ea9ff9fa7514ce9ab5a683813df8aaec53d556",
     "source": "FRED (DGS3MO, DGS10) - Board of Governors of the Federal Reserve System"
   },
   "sec_companyfacts_raw": {
