@@ -1,6 +1,6 @@
 {
   "ticker": "ORCL",
-  "retrieved_at_utc": "2026-10-17T09:59:53Z",
+  "retrieved_at_utc": "2026-10-20T01:09:33Z",
   "kind": "CONSENSUS",
   "source": "Yahoo Finance (aggregated sell-side consensus)",
   "earnings_estimate": {
@@ -61,7 +61,7 @@
       "currency": "USD"
     },
     "0y": {
-      "avg": 90424117580,
+      "avg": 90424111430,
       "low": 89098457000,
       "high": 91688285000,
       "numberOfAnalysts": 39,
@@ -70,11 +70,11 @@
       "currency": "USD"
     },
     "+1y": {
-      "avg": 131711631839,
+      "avg": 131711633380,
       "low": 117920000000,
       "high": 139642000000,
       "numberOfAnalysts": 39,
-      "yearAgoRevenue": 90424117580,
+      "yearAgoRevenue": 90424111430,
       "growth": 0.4566,
       "currency": "USD"
     }
@@ -146,19 +146,19 @@
   "growth_estimates": {
     "0q": {
       "stockTrend": -0.16229999,
-      "indexTrend": 0.2464
+      "indexTrend": 0.2494
     },
     "+1q": {
       "stockTrend": 0.13,
-      "indexTrend": 0.2672
+      "indexTrend": 0.2701
     },
     "0y": {
       "stockTrend": 0.0669,
-      "indexTrend": 0.32479998
+      "indexTrend": 0.3268
     },
     "+1y": {
       "stockTrend": 0.3502,
-      "indexTrend": 0.1657
+      "indexTrend": 0.16510001
     },
     "LTG": {
       "stockTrend": null,
@@ -166,24 +166,24 @@
     }
   },
   "price_targets": {
-    "current": 128.23,
+    "current": 129.59,
     "high": 400.0,
     "low": 110.0,
     "mean": 237.3644,
     "median": 240.0
   },
   "info": {
-    "currentPrice": 128.23,
-    "marketCap": 388729372672,
-    "enterpriseValue": 525177651200,
+    "currentPrice": 129.59,
+    "marketCap": 392852209664,
+    "enterpriseValue": 529289936896,
     "sharesOutstanding": 3031501149,
     "forwardEps": 10.99155,
     "trailingEps": 6.38,
-    "forwardPE": 11.666234,
-    "trailingPE": 20.098745,
-    "enterpriseToEbitda": 15.252,
-    "enterpriseToRevenue": 7.317,
-    "priceToSalesTrailing12Months": 5.4158683,
+    "forwardPE": 11.789965,
+    "trailingPE": 20.31191,
+    "enterpriseToEbitda": 15.372,
+    "enterpriseToRevenue": 7.374,
+    "priceToSalesTrailing12Months": 5.4733086,
     "beta": 1.77,
     "targetMeanPrice": 237.3644,
     "targetHighPrice": 400.0,
@@ -201,17 +201,17 @@
   "next_quarter_eps_estimate": 1.89,
   "peers": {
     "NVDA": {
-      "currentPrice": 214.13,
-      "marketCap": 5170596937728,
-      "enterpriseValue": 5136924016640,
+      "currentPrice": 217.09,
+      "marketCap": 5242072072192,
+      "enterpriseValue": 5208260214784,
       "sharesOutstanding": 24147000000,
       "forwardEps": 15.9146,
       "trailingEps": 7.91,
-      "forwardPE": 13.454941,
-      "trailingPE": 27.070797,
-      "enterpriseToEbitda": 25.523,
-      "enterpriseToRevenue": 16.955,
-      "priceToSalesTrailing12Months": 17.066366,
+      "forwardPE": 13.640933,
+      "trailingPE": 27.445007,
+      "enterpriseToEbitda": 25.877,
+      "enterpriseToRevenue": 17.191,
+      "priceToSalesTrailing12Months": 17.30228,
       "beta": 2.216,
       "targetMeanPrice": 328.71695,
       "targetHighPrice": 515.0,
@@ -226,19 +226,19 @@
       "payoutRatio": 0.0354
     },
     "MSFT": {
-      "currentPrice": 529.05,
-      "marketCap": 3928485003264,
-      "enterpriseValue": 3980454789120,
+      "currentPrice": 533.52,
+      "marketCap": 3961677414400,
+      "enterpriseValue": 4013646938112,
       "sharesOutstanding": 7425545491,
       "forwardEps": 23.72118,
       "trailingEps": 17.95,
-      "forwardPE": 22.302853,
-      "trailingPE": 29.473536,
-      "enterpriseToEbitda": 20.493,
-      "enterpriseToRevenue": 11.995,
-      "priceToSalesTrailing12Months": 11.838527,
+      "forwardPE": 22.491293,
+      "trailingPE": 29.722563,
+      "enterpriseToEbitda": 20.664,
+      "enterpriseToRevenue": 12.095,
+      "priceToSalesTrailing12Months": 11.938552,
       "beta": 1.099,
-      "targetMeanPrice": 599.23755,
+      "targetMeanPrice": 599.27527,
       "targetHighPrice": 870.0,
       "targetLowPrice": 440.0,
       "recommendationMean": 1.33929,
@@ -251,19 +251,19 @@
       "payoutRatio": 0.1983
     },
     "AMZN": {
-      "currentPrice": 250.0,
-      "marketCap": 2696578334720,
-      "enterpriseValue": 2825225502720,
+      "currentPrice": 262.45,
+      "marketCap": 2830868152320,
+      "enterpriseValue": 2959515058176,
       "sharesOutstanding": 10786313572,
       "forwardEps": 10.44315,
       "trailingEps": 12.43,
-      "forwardPE": 23.939138,
-      "trailingPE": 20.11263,
-      "enterpriseToEbitda": 16.726,
-      "enterpriseToRevenue": 3.642,
-      "priceToSalesTrailing12Months": 3.4764056,
+      "forwardPE": 25.131308,
+      "trailingPE": 21.11424,
+      "enterpriseToEbitda": 17.521,
+      "enterpriseToRevenue": 3.815,
+      "priceToSalesTrailing12Months": 3.649531,
       "beta": 1.456,
-      "targetMeanPrice": 331.46103,
+      "targetMeanPrice": 331.71967,
       "targetHighPrice": 405.0,
       "targetLowPrice": 230.0,
       "recommendationMean": 1.33333,
@@ -276,19 +276,19 @@
       "payoutRatio": 0.0
     },
     "GOOGL": {
-      "currentPrice": 340.59,
-      "marketCap": 4165393448960,
-      "enterpriseValue": 4061755604992,
+      "currentPrice": 344.18,
+      "marketCap": 4209298898944,
+      "enterpriseValue": 4105661317120,
       "sharesOutstanding": 5867155790,
-      "forwardEps": 15.28955,
+      "forwardEps": 15.29162,
       "trailingEps": 19.93,
-      "forwardPE": 22.276,
-      "trailingPE": 17.089312,
-      "enterpriseToEbitda": 23.456,
-      "enterpriseToRevenue": 9.11,
-      "priceToSalesTrailing12Months": 9.342255,
+      "forwardPE": 22.507751,
+      "trailingPE": 17.269442,
+      "enterpriseToEbitda": 23.71,
+      "enterpriseToRevenue": 9.208,
+      "priceToSalesTrailing12Months": 9.440726,
       "beta": 1.211,
-      "targetMeanPrice": 430.5111,
+      "targetMeanPrice": 430.04816,
       "targetHighPrice": 515.0,
       "targetLowPrice": 340.0,
       "recommendationMean": 1.37097,

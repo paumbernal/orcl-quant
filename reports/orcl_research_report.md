@@ -1,6 +1,6 @@
 # ORCL Quantitative Investment & AI Valuation Lab - Research Report
 
-**Oracle Corporation (NYSE: ORCL)** | price $128.23 at the 2026-10-16 close | latest reported quarter FY27 Q1 (ended 2026-08-31) | consensus snapshot 2026-10-17 | generated 2026-10-17 10:00 UTC
+**Oracle Corporation (NYSE: ORCL)** | price $128.23 at the 2026-10-16 close | latest reported quarter FY27 Q1 (ended 2026-08-31) | consensus snapshot 2026-10-20 | generated 2026-10-20 01:10 UTC
 
 > **How to read this.** Every figure is either *historical data* (SEC filings, exchange prices, FRED rates - with source and retrieval date in `data/manifest.json`), a *consensus forecast* (a dated Yahoo Finance snapshot), a *stated assumption* (`config.yaml`, with the derivation logged in `models/valuation_assumption_log.csv`) or a *model output*. The conclusion at the end is the output of a fixed voting rule - not a discretionary view. This is research, not investment advice.
 
@@ -23,7 +23,7 @@
 
 ## 2. Is the current valuation justified?
 
-**Relative to its own history**, Oracle trades at 20.1x trailing GAAP earnings (29th percentile of the last 10 years), 14.4x EV/EBITDA (32nd) and 6.8x EV/revenue (55th). Versus AI/cloud peers (Yahoo, current) its forward P/E is 11.7x against 22.3x median - but its EV multiples carry a $97bn net-debt burden and its capital intensity is far higher.
+**Relative to its own history**, Oracle trades at 20.1x trailing GAAP earnings (29th percentile of the last 10 years), 14.4x EV/EBITDA (32nd) and 6.8x EV/revenue (55th). Versus AI/cloud peers (Yahoo, current) its forward P/E is 11.8x against 22.5x median - but its EV multiples carry a $97bn net-debt burden and its capital intensity is far higher.
 
 **Scenario valuation** (four methods blended with the weights in `config.yaml`; DCF 40%):
 
@@ -31,11 +31,11 @@
 |---|---|---|---|---|---|---|
 | Bear | $33 | $91 | $131 | $119 | $82 | -36% |
 | Base | $177 | $162 | $190 | $160 | $173 | +35% |
-| Bull | $573 | $268 | $265 | $212 | $378 | +195% |
+| Bull | $574 | $268 | $265 | $212 | $378 | +195% |
 
-Probability-weighted value (25%/50%/25%): **$201** (+57% vs price). Base-case blended value is +35% vs price, i.e. the price sits **below** the base case. The scenario spread is wide and right-skewed (bear -36%, bull +195%) because growth, margin and capital intensity compound.
+Probability-weighted value (25%/50%/25%): **$202** (+57% vs price). Base-case blended value is +35% vs price, i.e. the price sits **below** the base case. The scenario spread is wide and right-skewed (bear -36%, bull +195%) because growth, margin and capital intensity compound.
 
-**What the price implies (reverse DCF).** Holding every other base-case assumption fixed, today's price is consistent with OCI growth running -5.4pp per year relative to the base path from FY29 (FY31 revenue $226bn vs $248bn in the base case), or with a terminal EBITDA margin of 36.4% vs 41.3%.
+**What the price implies (reverse DCF).** Holding every other base-case assumption fixed, today's price is consistent with OCI growth running -5.5pp per year relative to the base path from FY29 (FY31 revenue $226bn vs $248bn in the base case), or with a terminal EBITDA margin of 36.4% vs 41.3%.
 
 **Sensitivity of the base-case DCF ($177 per share):** +5pp/yr OCI growth from FY29 = $54; -5pp = -$45; +/-3pp terminal EBITDA margin = $30 / -$30; +/-0.5pp WACC = $23 / -$20.
 
@@ -90,7 +90,7 @@ Stress limits (assumptions in `config.yaml`): net debt/EBITDA <= 4.0x, interest 
 
 **Investment score: 38/100 (unattractive).** Components (0-100): growth 89, valuation 40, momentum 2, cash flow 34, balance sheet 25, market risk 2. A polarised picture: growth near the top of Oracle's own history while momentum, balance sheet, market risk near the bottom. Historically the score did not sort future returns in the intended direction (attractive-minus-unattractive Newey-West t-stats: 63d -0.2, 126d -2.6, 252d -2.2); weights were fixed in advance and not tuned. Under 500 random re-weightings the latest score ranges 27-49.
 
-**Experimental five-state signal: BULLISH.** Composite of momentum, valuation, earnings-surprise proxy, OCI growth, RPO growth and FCF trend (equal weights, thresholds from the training sample only). Honest backtest (next-open execution, 10 bp per side, long-only): out of sample after 2022-12-31, strategy Sharpe 0.24 vs ORCL buy-and-hold 0.41, Nasdaq 100 1.20, S&P 500 1.08; CAGR 7.6% vs 14.2%. A placebo that randomly re-orders the strategy's own exposures matches its Sharpe 46% of the time - **no demonstrable timing skill**. This is a research exercise, not a trading strategy.
+**Experimental five-state signal: BULLISH.** Composite of momentum, valuation, earnings-surprise proxy, OCI growth, RPO growth and FCF trend (equal weights, thresholds from the training sample only). Honest backtest (next-open execution, 10 bp per side, long-only): out of sample after 2022-12-31, strategy Sharpe 0.24 vs ORCL buy-and-hold 0.41, Nasdaq 100 1.20, S&P 500 1.08; CAGR 7.6% vs 14.2%. A placebo that randomly re-orders the strategy's own exposures matches its Sharpe 47% of the time - **no demonstrable timing skill**. This is a research exercise, not a trading strategy.
 
 **Statistical factor models.** In-sample R2 of the earnings-window regressions rises with every added variable (32% -> 62%) while leave-one-out R2 falls (24% -> -69%): overfitting at small N. The walk-forward model of the next 63-day excess return has out-of-sample R2 of -3.5% versus a constant forecast (information coefficient 0.09, Diebold-Mariano p=0.53). **The data do not support a claim that observable factors predict ORCL's returns**; the factor models describe, they do not forecast.
 
@@ -98,10 +98,10 @@ Stress limits (assumptions in `config.yaml`): net debt/EBITDA <= 4.0x, interest 
 
 |  | Expected return | Median | 5th pct | 95th pct | P(loss) | ES (5%) | P(MDD>50%) |
 |---|---|---|---|---|---|---|---|
-| normal | 10.8% | 5.1% | -38.2% | 79.5% | 43.9% | -45.6% | 3.9% |
-| student_t | 10.5% | 6.1% | -36.7% | 72.5% | 42.2% | -47.3% | 3.3% |
-| garch_t | 10.2% | 2.9% | -51.8% | 89.5% | 46.6% | -69.9% | 14.8% |
-| bootstrap | 10.6% | 6.3% | -36.2% | 70.7% | 41.6% | -44.5% | 3.7% |
+| normal | 10.7% | 5.1% | -38.2% | 79.5% | 44.0% | -45.6% | 4.0% |
+| student_t | 10.5% | 6.1% | -36.8% | 72.4% | 42.2% | -47.4% | 3.3% |
+| garch_t | 10.2% | 2.9% | -51.8% | 89.5% | 46.7% | -69.9% | 14.8% |
+| bootstrap | 10.6% | 6.3% | -36.3% | 70.7% | 41.7% | -44.6% | 3.7% |
 
 A normal distribution understates tail risk for this stock (excess kurtosis 33; 15 days beyond -4 sd vs 0.13 expected), and volatility clusters, so the GARCH and bootstrap rows are the more realistic ones.
 
@@ -124,13 +124,13 @@ A normal distribution understates tail risk for this stock (excess kurtosis 33; 
 
 ## 8. What price range does the scenario model imply?
 
-The scenario model implies a **blended value range of $82 - $378** with a base case of **$173** (DCF only: $33 / $177 / $573), and a probability-weighted value of **$201**. The current price is $128.23.
+The scenario model implies a **blended value range of $82 - $378** with a base case of **$173** (DCF only: $33 / $177 / $574), and a probability-weighted value of **$202**. The current price is $128.23.
 
 |  | DCF | Forward P/E | EV/EBITDA | EV/Revenue | Blended | Upside vs price |
 |---|---|---|---|---|---|---|
 | Bear | $33 | $91 | $131 | $119 | $82 | -36% |
 | Base | $177 | $162 | $190 | $160 | $173 | +35% |
-| Bull | $573 | $268 | $265 | $212 | $378 | +195% |
+| Bull | $574 | $268 | $265 | $212 | $378 | +195% |
 
 For comparison: the Monte Carlo 12-month price distribution (GARCH-t, current price as start) has a 5th / median / 95th percentile of $62 / $132 / $243; sell-side targets are $110 / $237 / $400 (low / mean / high; consensus snapshot, not data). The scenario values describe what the business is worth under stated assumptions, the Monte Carlo describes where the *price* may trade; they answer different questions.
 
