@@ -1,6 +1,6 @@
 # ORCL Quantitative Investment & AI Valuation Lab - Research Report
 
-**Oracle Corporation (NYSE: ORCL)** | price $125.54 at the 2026-10-22 close | latest reported quarter FY27 Q1 (ended 2026-08-31) | consensus snapshot 2026-10-24 | generated 2026-10-24 00:56 UTC
+**Oracle Corporation (NYSE: ORCL)** | price $126.16 at the 2026-10-23 close | latest reported quarter FY27 Q1 (ended 2026-08-31) | consensus snapshot 2026-10-24 | generated 2026-10-24 10:07 UTC
 
 > **How to read this.** Every figure is either *historical data* (SEC filings, exchange prices, FRED rates - with source and retrieval date in `data/manifest.json`), a *consensus forecast* (a dated Yahoo Finance snapshot), a *stated assumption* (`config.yaml`, with the derivation logged in `models/valuation_assumption_log.csv`) or a *model output*. The conclusion at the end is the output of a fixed voting rule - not a discretionary view. This is research, not investment advice.
 
@@ -11,11 +11,11 @@
 
 ## 1. What is driving ORCL's stock?
 
-**1. Market and sector factors explain only about a third of daily variance.** A four-factor regression (market, tech tilt, semiconductors/AI, hyperscalers) has R2 = 34% over 4,226 days; the market beta is 1.03 (t=31) and the semiconductor/AI loading 0.07 (t=1.9). The rolling loadings swing widely (chart: *Rolling 252-day factor loadings*), so full-sample numbers describe an average that no single year resembles.
+**1. Market and sector factors explain only about a third of daily variance.** A four-factor regression (market, tech tilt, semiconductors/AI, hyperscalers) has R2 = 34% over 4,227 days; the market beta is 1.03 (t=31) and the semiconductor/AI loading 0.07 (t=1.9). The rolling loadings swing widely (chart: *Rolling 252-day factor loadings*), so full-sample numbers describe an average that no single year resembles.
 
 **2. Earnings events dominate the stock-specific part.** Across 63 releases the mean absolute one-day abnormal return is 6.1% (range -13% to +35%) while the mean is +0.10% (p=0.93). The size of the EPS beat/miss has no statistically significant rank relationship with the reaction (rho=0.11, p=0.40); the change in revenue-growth momentum has rho=0.32 (p=0.01). In other words, the market is trading growth trajectory, backlog and capital intensity, not the quarterly EPS print.
 
-**3. The stock is currently trading on its own story, not its peers'.** Divergence episodes versus an AI/cloud peer basket: 2026-07-14 to 2026-07-29: underperforming peers (-32% peak relative); 2026-07-31 to 2026-08-11: underperforming peers (-28% peak relative); 2026-08-14 to 2026-09-22: underperforming peers (-42% peak relative). Latest technical state: price below the 200-day average, RSI 39, in the neutral 30-70 band, 55% below the 52-week high, ATR 5.4% of price. Annualised volatility is 57% (252-day) and the stock is 61% below its running peak.
+**3. The stock is currently trading on its own story, not its peers'.** Divergence episodes versus an AI/cloud peer basket: 2026-07-14 to 2026-07-29: underperforming peers (-32% peak relative); 2026-07-31 to 2026-08-11: underperforming peers (-28% peak relative); 2026-08-14 to 2026-09-22: underperforming peers (-42% peak relative). Latest technical state: price below the 200-day average, RSI 39, in the neutral 30-70 band, 55% below the 52-week high, ATR 5.2% of price. Annualised volatility is 57% (252-day) and the stock is 61% below its running peak.
 
 **4. Fundamentals trajectory.** Revenue 30% YoY, OCI 121%, operating income 57%, but gross-margin proxy 60.4% (down from 70.6% two years ago) and FCF margin -40%. The variables the market appears to price are therefore (i) the pace of OCI/backlog conversion, (ii) the funding of the capex programme and (iii) the margin and asset turnover the new capacity will earn.
 
@@ -23,19 +23,19 @@
 
 ## 2. Is the current valuation justified?
 
-**Relative to its own history**, Oracle trades at 19.7x trailing GAAP earnings (26th percentile of the last 10 years), 14.1x EV/EBITDA (30th) and 6.7x EV/revenue (52nd). Versus AI/cloud peers (Yahoo, current) its forward P/E is 11.5x against 21.5x median - but its EV multiples carry a $97bn net-debt burden and its capital intensity is far higher.
+**Relative to its own history**, Oracle trades at 19.8x trailing GAAP earnings (27th percentile of the last 10 years), 14.2x EV/EBITDA (30th) and 6.7x EV/revenue (53rd). Versus AI/cloud peers (Yahoo, current) its forward P/E is 11.5x against 21.5x median - but its EV multiples carry a $97bn net-debt burden and its capital intensity is far higher.
 
 **Scenario valuation** (four methods blended with the weights in `config.yaml`; DCF 40%):
 
 |  | DCF | Forward P/E | EV/EBITDA | EV/Revenue | Blended | Upside vs price |
 |---|---|---|---|---|---|---|
-| Bear | $35 | $91 | $131 | $119 | $83 | -34% |
-| Base | $183 | $163 | $191 | $160 | $176 | +40% |
-| Bull | $594 | $269 | $265 | $212 | $387 | +208% |
+| Bear | $35 | $91 | $132 | $120 | $83 | -35% |
+| Base | $183 | $163 | $190 | $161 | $176 | +39% |
+| Bull | $594 | $268 | $265 | $212 | $387 | +206% |
 
-Probability-weighted value (25%/50%/25%): **$205** (+64% vs price). Base-case blended value is +40% vs price, i.e. the price sits **below** the base case. The scenario spread is wide and right-skewed (bear -34%, bull +208%) because growth, margin and capital intensity compound.
+Probability-weighted value (25%/50%/25%): **$205** (+63% vs price). Base-case blended value is +39% vs price, i.e. the price sits **below** the base case. The scenario spread is wide and right-skewed (bear -35%, bull +206%) because growth, margin and capital intensity compound.
 
-**What the price implies (reverse DCF).** Holding every other base-case assumption fixed, today's price is consistent with OCI growth running -6.3pp per year relative to the base path from FY29 (FY31 revenue $223bn vs $249bn in the base case), or with a terminal EBITDA margin of 35.6% vs 41.3%.
+**What the price implies (reverse DCF).** Holding every other base-case assumption fixed, today's price is consistent with OCI growth running -6.2pp per year relative to the base path from FY29 (FY31 revenue $224bn vs $249bn in the base case), or with a terminal EBITDA margin of 35.7% vs 41.3%.
 
 **Sensitivity of the base-case DCF ($183 per share):** +5pp/yr OCI growth from FY29 = $56; -5pp = -$47; +/-3pp terminal EBITDA margin = $30 / -$30; +/-0.5pp WACC = $24 / -$21.
 
@@ -90,7 +90,7 @@ Stress limits (assumptions in `config.yaml`): net debt/EBITDA <= 4.0x, interest 
 
 **Investment score: 39/100 (unattractive).** Components (0-100): growth 89, valuation 42, momentum 2, cash flow 34, balance sheet 25, market risk 3. A polarised picture: growth near the top of Oracle's own history while momentum, balance sheet, market risk near the bottom. Historically the score did not sort future returns in the intended direction (attractive-minus-unattractive Newey-West t-stats: 63d -0.2, 126d -2.6, 252d -2.2); weights were fixed in advance and not tuned. Under 500 random re-weightings the latest score ranges 27-49.
 
-**Experimental five-state signal: BULLISH.** Composite of momentum, valuation, earnings-surprise proxy, OCI growth, RPO growth and FCF trend (equal weights, thresholds from the training sample only). Honest backtest (next-open execution, 10 bp per side, long-only): out of sample after 2022-12-31, strategy Sharpe 0.23 vs ORCL buy-and-hold 0.40, Nasdaq 100 1.18, S&P 500 1.08; CAGR 7.1% vs 13.5%. A placebo that randomly re-orders the strategy's own exposures matches its Sharpe 50% of the time - **no demonstrable timing skill**. This is a research exercise, not a trading strategy.
+**Experimental five-state signal: BULLISH.** Composite of momentum, valuation, earnings-surprise proxy, OCI growth, RPO growth and FCF trend (equal weights, thresholds from the training sample only). Honest backtest (next-open execution, 10 bp per side, long-only): out of sample after 2022-12-31, strategy Sharpe 0.23 vs ORCL buy-and-hold 0.40, Nasdaq 100 1.18, S&P 500 1.07; CAGR 7.2% vs 13.6%. A placebo that randomly re-orders the strategy's own exposures matches its Sharpe 50% of the time - **no demonstrable timing skill**. This is a research exercise, not a trading strategy.
 
 **Statistical factor models.** In-sample R2 of the earnings-window regressions rises with every added variable (32% -> 62%) while leave-one-out R2 falls (24% -> -69%): overfitting at small N. The walk-forward model of the next 63-day excess return has out-of-sample R2 of -3.5% versus a constant forecast (information coefficient 0.09, Diebold-Mariano p=0.53). **The data do not support a claim that observable factors predict ORCL's returns**; the factor models describe, they do not forecast.
 
@@ -99,9 +99,9 @@ Stress limits (assumptions in `config.yaml`): net debt/EBITDA <= 4.0x, interest 
 |  | Expected return | Median | 5th pct | 95th pct | P(loss) | ES (5%) | P(MDD>50%) |
 |---|---|---|---|---|---|---|---|
 | normal | 10.7% | 5.1% | -38.2% | 79.4% | 44.0% | -45.6% | 4.0% |
-| student_t | 10.4% | 5.8% | -36.5% | 72.4% | 42.5% | -47.1% | 3.4% |
-| garch_t | 10.2% | 3.8% | -47.8% | 83.9% | 45.3% | -65.1% | 12.1% |
-| bootstrap | 10.5% | 6.2% | -36.5% | 72.9% | 41.9% | -44.6% | 3.8% |
+| student_t | 10.4% | 5.8% | -36.5% | 72.7% | 42.4% | -47.1% | 3.4% |
+| garch_t | 9.9% | 4.0% | -46.0% | 81.2% | 44.9% | -63.5% | 11.2% |
+| bootstrap | 10.4% | 6.1% | -36.5% | 72.4% | 42.1% | -44.5% | 3.9% |
 
 A normal distribution understates tail risk for this stock (excess kurtosis 33; 15 days beyond -4 sd vs 0.13 expected), and volatility clusters, so the GARCH and bootstrap rows are the more realistic ones.
 
@@ -115,24 +115,24 @@ A normal distribution understates tail risk for this stock (excess kurtosis 33; 
 
 ## 7. Biggest downside risks
 
-- **Growth fades faster than backlog implies.** Bear-case value $83 (-34%): analyst-low revenue, OCI growth reverting at its pre-AI persistence, margin at the 25th percentile of its history. -5pp/yr of OCI growth costs -$47 per share.
+- **Growth fades faster than backlog implies.** Bear-case value $83 (-35%): analyst-low revenue, OCI growth reverting at its pre-AI persistence, margin at the 25th percentile of its history. -5pp/yr of OCI growth costs -$47 per share.
 - **Capex and depreciation outrun revenue.** Capex is 1.6x operating cash flow; the gross-margin proxy has fallen 10pp in two years and depreciation is 17% of revenue and rising as construction-in-progress enters service.
 - **Financing risk.** The base-case funding gap peaks at $94bn (bear: interest cover falls to 2.4x vs a 3.0x floor). A closed or expensive debt/equity market, or a rating downgrade, hits both the cost of capital and the ability to deliver contracted capacity. Equity dilution is already visible (+6.4% shares YoY).
 - **Counterparty and concentration risk.** RPO is 9.3x revenue and a small number of very large contracts can dominate it (cannot be verified from public data). Contract cancellation, renegotiation or customer financing stress would reduce conversion without any change in reported RPO until it is recognised.
-- **Earnings-event and tail risk.** The average absolute earnings-day move is 6.1%; the worst was -13%. The simulated one-year 5th-percentile return is -48% (GARCH-t) with an expected shortfall of -65% and a 12% chance of a >50% intra-year drawdown. Realised 99% VaR was breached 67 times in 3,974 days vs 40 expected.
+- **Earnings-event and tail risk.** The average absolute earnings-day move is 6.1%; the worst was -13%. The simulated one-year 5th-percentile return is -46% (GARCH-t) with an expected shortfall of -63% and a 11% chance of a >50% intra-year drawdown. Realised 99% VaR was breached 67 times in 3,975 days vs 40 expected.
 - **Valuation-multiple contraction.** Multiples are anchored on Oracle's capital-light history; if the market re-rates Oracle as an infrastructure utility-like business, EV/EBITDA could converge below the 13.2x bear-case anchor.
 
 ## 8. What price range does the scenario model imply?
 
-The scenario model implies a **blended value range of $83 - $387** with a base case of **$176** (DCF only: $35 / $183 / $594), and a probability-weighted value of **$205**. The current price is $125.54.
+The scenario model implies a **blended value range of $83 - $387** with a base case of **$176** (DCF only: $35 / $183 / $594), and a probability-weighted value of **$205**. The current price is $126.16.
 
 |  | DCF | Forward P/E | EV/EBITDA | EV/Revenue | Blended | Upside vs price |
 |---|---|---|---|---|---|---|
-| Bear | $35 | $91 | $131 | $119 | $83 | -34% |
-| Base | $183 | $163 | $191 | $160 | $176 | +40% |
-| Bull | $594 | $269 | $265 | $212 | $387 | +208% |
+| Bear | $35 | $91 | $132 | $120 | $83 | -35% |
+| Base | $183 | $163 | $190 | $161 | $176 | +39% |
+| Bull | $594 | $268 | $265 | $212 | $387 | +206% |
 
-For comparison: the Monte Carlo 12-month price distribution (GARCH-t, current price as start) has a 5th / median / 95th percentile of $66 / $130 / $231; sell-side targets are $110 / $237 / $400 (low / mean / high; consensus snapshot, not data). The scenario values describe what the business is worth under stated assumptions, the Monte Carlo describes where the *price* may trade; they answer different questions.
+For comparison: the Monte Carlo 12-month price distribution (GARCH-t, current price as start) has a 5th / median / 95th percentile of $68 / $131 / $229; sell-side targets are $110 / $237 / $400 (low / mean / high; consensus snapshot, not data). The scenario values describe what the business is worth under stated assumptions, the Monte Carlo describes where the *price* may trade; they answer different questions.
 
 **Researcher degrees of freedom (disclosed).** Modelling choices made *after* seeing an intermediate result, and why:
 1. *Scenario positions.* A first version put every scenario driver at the 10th/90th percentile of its range simultaneously; that produced implausible joint extremes (bull value above $1,000/share, bear equity worth roughly zero). Drivers were moved to inter-quartile positions (`valuation.scenario_position`, `margin_percentiles`) - a judgement about joint plausibility, not a fit to the current price.
@@ -165,8 +165,8 @@ Method weights, scenario probabilities, score weights, signal components/quantil
 
 | Vote | Score | Evidence |
 |---|---|---|
-| Valuation (scenario-implied value vs price) | +1 | base +40%, probability-weighted +64% (thresholds +/-15%) |
-| Quantitative score | -1 | score 39.0 (bull >= 60, bear <= 40) |
+| Valuation (scenario-implied value vs price) | +1 | base +39%, probability-weighted +63% (thresholds +/-15%) |
+| Quantitative score | -1 | score 38.9 (bull >= 60, bear <= 40) |
 | Experimental signal | +1 | state BULLISH |
 | Cash conversion | -1 | TTM FCF margin -40%, YoY change -30pp |
 | Balance sheet | +0 | net debt/EBITDA 2.6x (limit 4.0x); base path breach: False; bear path breach: True |
@@ -175,4 +175,4 @@ Rule: Bull if the vote total >= +2, Bear if <= -2, otherwise Neutral (five votes
 
 > ## Investment conclusion: **Neutral**
 >
-> *This conclusion is model-driven, not subjective: it is the output of the five-vote rule above applied to the model outputs on 2026-10-22. Positive: valuation, experimental signal. Negative: quantitative score, cash conversion. Neutral: balance sheet. It changes only when a model output or a stated threshold changes. Not investment advice.*
+> *This conclusion is model-driven, not subjective: it is the output of the five-vote rule above applied to the model outputs on 2026-10-23. Positive: valuation, experimental signal. Negative: quantitative score, cash conversion. Neutral: balance sheet. It changes only when a model output or a stated threshold changes. Not investment advice.*

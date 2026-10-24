@@ -1,6 +1,6 @@
 {
   "ticker": "ORCL",
-  "retrieved_at_utc": "2026-10-24T00:55:38Z",
+  "retrieved_at_utc": "2026-10-24T10:06:38Z",
   "kind": "CONSENSUS",
   "source": "Yahoo Finance (aggregated sell-side consensus)",
   "earnings_estimate": {
@@ -146,15 +146,15 @@
   "growth_estimates": {
     "0q": {
       "stockTrend": -0.16219999,
-      "indexTrend": 0.2538
+      "indexTrend": 0.2588
     },
     "+1q": {
       "stockTrend": 0.13,
-      "indexTrend": 0.2727
+      "indexTrend": 0.2724
     },
     "0y": {
       "stockTrend": 0.0669,
-      "indexTrend": 0.32779998
+      "indexTrend": 0.32819998
     },
     "+1y": {
       "stockTrend": 0.35,
@@ -255,9 +255,9 @@
       "marketCap": 2675005718528,
       "enterpriseValue": 2803652886528,
       "sharesOutstanding": 10786313572,
-      "forwardEps": 10.43091,
+      "forwardEps": 10.43008,
       "trailingEps": 12.43,
-      "forwardPE": 23.77549,
+      "forwardPE": 23.777382,
       "trailingPE": 19.951729,
       "enterpriseToEbitda": 16.598,
       "enterpriseToRevenue": 3.614,
