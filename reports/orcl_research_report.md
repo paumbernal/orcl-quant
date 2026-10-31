@@ -1,6 +1,6 @@
 # ORCL Quantitative Investment & AI Valuation Lab - Research Report
 
-**Oracle Corporation (NYSE: ORCL)** | price $130.67 at the 2026-10-30 close | latest reported quarter FY27 Q1 (ended 2026-08-31) | consensus snapshot 2026-10-31 | generated 2026-10-31 01:44 UTC
+**Oracle Corporation (NYSE: ORCL)** | price $130.67 at the 2026-10-30 close | latest reported quarter FY27 Q1 (ended 2026-08-31) | consensus snapshot 2026-10-31 | generated 2026-10-31 11:32 UTC
 
 > **How to read this.** Every figure is either *historical data* (SEC filings, exchange prices, FRED rates - with source and retrieval date in `data/manifest.json`), a *consensus forecast* (a dated Yahoo Finance snapshot), a *stated assumption* (`config.yaml`, with the derivation logged in `models/valuation_assumption_log.csv`) or a *model output*. The conclusion at the end is the output of a fixed voting rule - not a discretionary view. This is research, not investment advice.
 
@@ -99,7 +99,7 @@ Stress limits (assumptions in `config.yaml`): net debt/EBITDA <= 4.0x, interest 
 |  | Expected return | Median | 5th pct | 95th pct | P(loss) | ES (5%) | P(MDD>50%) |
 |---|---|---|---|---|---|---|---|
 | normal | 10.7% | 5.0% | -38.4% | 79.7% | 44.1% | -45.8% | 4.1% |
-| student_t | 10.4% | 6.0% | -37.1% | 72.8% | 42.2% | -47.8% | 3.7% |
+| student_t | 10.4% | 6.0% | -37.1% | 72.8% | 42.4% | -47.9% | 3.7% |
 | garch_t | 9.6% | 2.7% | -56.6% | 91.9% | 47.2% | -74.3% | 17.3% |
 | bootstrap | 10.1% | 5.8% | -36.6% | 71.6% | 42.9% | -44.7% | 3.9% |
 
