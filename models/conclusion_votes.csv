@@ -1,6 +1,6 @@
 vote,value,evidence
-Valuation (scenario-implied value vs price),1,"base +42%, probability-weighted +67% (thresholds +/-15%)"
-Quantitative score,-1,"score 39.4 (bull >= 60, bear <= 40)"
+Valuation (scenario-implied value vs price),1,"base +55%, probability-weighted +82% (thresholds +/-15%)"
+Quantitative score,0,"score 40.8 (bull >= 60, bear <= 40)"
 Experimental signal,1,state BULLISH
 Cash conversion,-1,"TTM FCF margin -40%, YoY change -30pp"
 Balance sheet,0,net debt/EBITDA 2.6x (limit 4.0x); base path breach: False; bear path breach: True
