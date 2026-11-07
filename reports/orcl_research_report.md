@@ -1,6 +1,6 @@
 # ORCL Quantitative Investment & AI Valuation Lab - Research Report
 
-**Oracle Corporation (NYSE: ORCL)** | price $116.10 at the 2026-11-06 close | latest reported quarter FY27 Q1 (ended 2026-08-31) | consensus snapshot 2026-11-07 | generated 2026-11-07 02:10 UTC
+**Oracle Corporation (NYSE: ORCL)** | price $116.10 at the 2026-11-06 close | latest reported quarter FY27 Q1 (ended 2026-08-31) | consensus snapshot 2026-11-07 | generated 2026-11-07 12:16 UTC
 
 > **How to read this.** Every figure is either *historical data* (SEC filings, exchange prices, FRED rates - with source and retrieval date in `data/manifest.json`), a *consensus forecast* (a dated Yahoo Finance snapshot), a *stated assumption* (`config.yaml`, with the derivation logged in `models/valuation_assumption_log.csv`) or a *model output*. The conclusion at the end is the output of a fixed voting rule - not a discretionary view. This is research, not investment advice.
 
@@ -99,8 +99,8 @@ Stress limits (assumptions in `config.yaml`): net debt/EBITDA <= 4.0x, interest 
 |  | Expected return | Median | 5th pct | 95th pct | P(loss) | ES (5%) | P(MDD>50%) |
 |---|---|---|---|---|---|---|---|
 | normal | 10.7% | 4.9% | -38.6% | 80.0% | 44.2% | -46.0% | 4.2% |
-| student_t | 10.2% | 5.7% | -36.6% | 72.2% | 42.4% | -48.0% | 3.5% |
-| garch_t | 9.5% | 2.1% | -57.1% | 93.8% | 47.9% | -74.5% | 17.5% |
+| student_t | 10.2% | 5.8% | -36.7% | 71.9% | 42.4% | -48.1% | 3.5% |
+| garch_t | 9.5% | 2.0% | -56.5% | 94.3% | 47.7% | -74.6% | 17.6% |
 | bootstrap | 10.6% | 6.1% | -36.5% | 72.7% | 42.0% | -45.0% | 3.8% |
 
 A normal distribution understates tail risk for this stock (excess kurtosis 32; 16 days beyond -4 sd vs 0.13 expected), and volatility clusters, so the GARCH and bootstrap rows are the more realistic ones.
@@ -111,7 +111,7 @@ A normal distribution understates tail risk for this stock (excess kurtosis 32; 
 - **Asset turnover improving toward hyperscaler levels.** The base case converges net PP&E/revenue to 1.02x; the bull case assumes 0.86x. Every +3pp of terminal EBITDA margin is worth $31 per share.
 - **Free-cash-flow inflection.** The base case turns unlevered FCF positive in FY30E (bull FY31E); evidence of capex peaking below operating cash flow would remove the main reason the stock trades at a discount to the model.
 - **Lower discount rate / risk premium.** -0.5pp on WACC is worth $26 per share; the stock's beta has been 2.2 on a rolling year, so a calmer tape matters.
-- **Mean reversion in sentiment.** The stock is 64% below its high, momentum and risk components of the score are near historical lows, and sell-side targets average $235 (range $110-$400) - but targets are opinions, and the score history shows low momentum has not reliably preceded rebounds.
+- **Mean reversion in sentiment.** The stock is 64% below its high, momentum and risk components of the score are near historical lows, and sell-side targets average $236 (range $110-$400) - but targets are opinions, and the score history shows low momentum has not reliably preceded rebounds.
 
 ## 7. Biggest downside risks
 
@@ -119,7 +119,7 @@ A normal distribution understates tail risk for this stock (excess kurtosis 32; 
 - **Capex and depreciation outrun revenue.** Capex is 1.6x operating cash flow; the gross-margin proxy has fallen 10pp in two years and depreciation is 17% of revenue and rising as construction-in-progress enters service.
 - **Financing risk.** The base-case funding gap peaks at $94bn (bear: interest cover falls to 2.5x vs a 3.0x floor). A closed or expensive debt/equity market, or a rating downgrade, hits both the cost of capital and the ability to deliver contracted capacity. Equity dilution is already visible (+6.4% shares YoY).
 - **Counterparty and concentration risk.** RPO is 9.3x revenue and a small number of very large contracts can dominate it (cannot be verified from public data). Contract cancellation, renegotiation or customer financing stress would reduce conversion without any change in reported RPO until it is recognised.
-- **Earnings-event and tail risk.** The average absolute earnings-day move is 6.1%; the worst was -13%. The simulated one-year 5th-percentile return is -57% (GARCH-t) with an expected shortfall of -74% and a 18% chance of a >50% intra-year drawdown. Realised 99% VaR was breached 68 times in 3,985 days vs 40 expected.
+- **Earnings-event and tail risk.** The average absolute earnings-day move is 6.1%; the worst was -13%. The simulated one-year 5th-percentile return is -57% (GARCH-t) with an expected shortfall of -75% and a 18% chance of a >50% intra-year drawdown. Realised 99% VaR was breached 68 times in 3,985 days vs 40 expected.
 - **Valuation-multiple contraction.** Multiples are anchored on Oracle's capital-light history; if the market re-rates Oracle as an infrastructure utility-like business, EV/EBITDA could converge below the 13.2x bear-case anchor.
 
 ## 8. What price range does the scenario model imply?
@@ -132,7 +132,7 @@ The scenario model implies a **blended value range of $86 - $398** with a base c
 | Base | $191 | $163 | $191 | $161 | $179 | +54% |
 | Bull | $621 | $269 | $265 | $212 | $398 | +243% |
 
-For comparison: the Monte Carlo 12-month price distribution (GARCH-t, current price as start) has a 5th / median / 95th percentile of $50 / $119 / $225; sell-side targets are $110 / $235 / $400 (low / mean / high; consensus snapshot, not data). The scenario values describe what the business is worth under stated assumptions, the Monte Carlo describes where the *price* may trade; they answer different questions.
+For comparison: the Monte Carlo 12-month price distribution (GARCH-t, current price as start) has a 5th / median / 95th percentile of $50 / $118 / $226; sell-side targets are $110 / $236 / $400 (low / mean / high; consensus snapshot, not data). The scenario values describe what the business is worth under stated assumptions, the Monte Carlo describes where the *price* may trade; they answer different questions.
 
 **Researcher degrees of freedom (disclosed).** Modelling choices made *after* seeing an intermediate result, and why:
 1. *Scenario positions.* A first version put every scenario driver at the 10th/90th percentile of its range simultaneously; that produced implausible joint extremes (bull value above $1,000/share, bear equity worth roughly zero). Drivers were moved to inter-quartile positions (`valuation.scenario_position`, `margin_percentiles`) - a judgement about joint plausibility, not a fit to the current price.

@@ -1,6 +1,6 @@
 {
   "ticker": "ORCL",
-  "retrieved_at_utc": "2026-11-07T02:09:45Z",
+  "retrieved_at_utc": "2026-11-07T12:15:41Z",
   "kind": "CONSENSUS",
   "source": "Yahoo Finance (aggregated sell-side consensus)",
   "earnings_estimate": {
@@ -25,22 +25,22 @@
       "methodology": "normalized"
     },
     "0y": {
-      "avg": 8.14185,
+      "avg": 8.1518,
       "low": 8.0,
-      "high": 8.37,
+      "high": 8.6,
       "yearAgoEps": 7.63,
-      "numberOfAnalysts": 37,
-      "growth": 0.0671,
+      "numberOfAnalysts": 38,
+      "growth": 0.0684,
       "currency": "USD",
       "methodology": "normalized"
     },
     "+1y": {
-      "avg": 11.05442,
+      "avg": 11.06356,
       "low": 9.0,
       "high": 12.77,
-      "yearAgoEps": 8.14185,
-      "numberOfAnalysts": 39,
-      "growth": 0.3577,
+      "yearAgoEps": 8.1518,
+      "numberOfAnalysts": 40,
+      "growth": 0.35720003,
       "currency": "USD",
       "methodology": "normalized"
     }
@@ -103,7 +103,7 @@
       "methodology": "normalized"
     },
     "0y": {
-      "current": 8.14185,
+      "current": 8.1518,
       "7daysAgo": 8.14069,
       "30daysAgo": 8.1414,
       "60daysAgo": 8.06295,
@@ -112,7 +112,7 @@
       "methodology": "normalized"
     },
     "+1y": {
-      "current": 11.05442,
+      "current": 11.06356,
       "7daysAgo": 10.99167,
       "30daysAgo": 10.99719,
       "60daysAgo": 10.96763,
@@ -123,32 +123,32 @@
   },
   "eps_revisions": {
     "0q": {
-      "upLast7days": 1,
+      "upLast7days": 0,
       "upLast30days": 1,
       "downLast30days": 3,
-      "downLast7Days": 0,
+      "downLast7Days": 3,
       "currency": "USD",
       "methodology": "normalized"
     },
     "+1q": {
-      "upLast7days": 1,
-      "upLast30days": 1,
-      "downLast30days": 0,
-      "downLast7Days": 0,
+      "upLast7days": 4,
+      "upLast30days": 5,
+      "downLast30days": 4,
+      "downLast7Days": 4,
       "currency": "USD",
       "methodology": "normalized"
     },
     "0y": {
-      "upLast7days": 1,
+      "upLast7days": 5,
       "upLast30days": 6,
       "downLast30days": 6,
-      "downLast7Days": 0,
+      "downLast7Days": 5,
       "currency": "USD",
       "methodology": "normalized"
     },
     "+1y": {
       "upLast7days": 6,
-      "upLast30days": 2,
+      "upLast30days": 3,
       "downLast30days": 2,
       "downLast7Days": 5,
       "currency": "USD",
@@ -165,11 +165,11 @@
       "indexTrend": 0.2742
     },
     "0y": {
-      "stockTrend": 0.0671,
+      "stockTrend": 0.0684,
       "indexTrend": 0.3326
     },
     "+1y": {
-      "stockTrend": 0.3577,
+      "stockTrend": 0.35720003,
       "indexTrend": 0.16549999
     },
     "LTG": {
@@ -181,7 +181,7 @@
     "current": 116.1,
     "high": 400.0,
     "low": 110.0,
-    "mean": 235.46,
+    "mean": 235.7735,
     "median": 225.0
   },
   "info": {
@@ -189,24 +189,24 @@
     "marketCap": 361965912064,
     "enterpriseValue": 488499740672,
     "sharesOutstanding": 3117708046,
-    "forwardEps": 11.05442,
+    "forwardEps": 11.06356,
     "trailingEps": 6.38,
-    "forwardPE": 10.502585,
+    "forwardPE": 10.49391,
     "trailingPE": 18.19749,
     "enterpriseToEbitda": 14.187,
     "enterpriseToRevenue": 6.806,
     "priceToSalesTrailing12Months": 5.0429935,
     "beta": 1.778,
-    "targetMeanPrice": 235.46,
+    "targetMeanPrice": 235.7735,
     "targetHighPrice": 400.0,
     "targetLowPrice": 110.0,
-    "recommendationMean": 1.53659,
-    "numberOfAnalystOpinions": 39,
+    "recommendationMean": 1.54762,
+    "numberOfAnalystOpinions": 40,
     "totalDebt": 169142992896,
     "totalCash": 37077000192,
     "ebitda": 34432999424,
     "totalRevenue": 71776002048,
-    "dividendYield": 1.74,
+    "dividendYield": 1.72,
     "payoutRatio": 0.31350002
   },
   "next_earnings_date": "2026-12-14",
@@ -234,7 +234,7 @@
       "totalCash": 62469001216,
       "ebitda": 201266003968,
       "totalRevenue": 302970011648,
-      "dividendYield": 0.55,
+      "dividendYield": 0.54,
       "payoutRatio": 0.0354
     },
     "MSFT": {
@@ -259,7 +259,7 @@
       "totalCash": 64509001728,
       "ebitda": 205690994688,
       "totalRevenue": 346444988416,
-      "dividendYield": 0.73,
+      "dividendYield": 0.74,
       "payoutRatio": 0.19
     },
     "AMZN": {

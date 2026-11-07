@@ -26,10 +26,10 @@ bear,"Valuation multiples (P/E, EV/EBITDA, EV/Revenue)",19.6x / 13.2x / 5.6x,DAT
 base,"Valuation multiples (P/E, EV/EBITDA, EV/Revenue)",27.5x / 16.6x / 6.6x,DATA,50th percentile of Oracle's own trailing multiples over 10 years (today 18.2x / 13.3x / 6.3x).
 bull,"Valuation multiples (P/E, EV/EBITDA, EV/Revenue)",37.5x / 20.4x / 8.0x,DATA,75th percentile of Oracle's own trailing multiples over 10 years (today 18.2x / 13.3x / 6.3x).
 bear,Revenue FY27 ($m),"89,098",CONSENSUS,Lowest analyst estimate in the snapshot (2026-11-07).
-base,Revenue FY27 ($m),"90,447",CONSENSUS,Mean of 37 analysts.
+base,Revenue FY27 ($m),"90,447",CONSENSUS,Mean of 38 analysts.
 bull,Revenue FY27 ($m),"91,688",CONSENSUS,Highest analyst estimate in the snapshot.
 bear,Revenue FY28 ($m),"122,209",CONSENSUS,Lowest analyst estimate in the snapshot (2026-11-07).
-base,Revenue FY28 ($m),"131,819",CONSENSUS,Mean of 39 analysts.
+base,Revenue FY28 ($m),"131,819",CONSENSUS,Mean of 40 analysts.
 bull,Revenue FY28 ($m),"139,642",CONSENSUS,Highest analyst estimate in the snapshot.
 bear,Terminal growth,2.0%,SCENARIO,Stated scenario assumption; must stay below the 10-year Treasury yield (4.84%) and long-run nominal GDP growth.
 bear,Scenario probability,25%,SCENARIO,Subjective weight used only for the probability-weighted value.

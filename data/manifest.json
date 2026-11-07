@@ -3,8 +3,8 @@
     "file": "/home/runner/work/orcl-quant/orcl-quant/data/processed/consensus_snapshot.json",
     "kind": "CONSENSUS",
     "notes": "Forecasts are third-party opinions, not data. consensus_history.csv appends one row per period per run.",
-    "retrieved_at_utc": "2026-11-07T02:09:47Z",
-    "sha256": "f62b5249fb07ca0380763d3d38b6df0651be7d2f1164d5b2190e99df3b8fce9f",
+    "retrieved_at_utc": "2026-11-07T12:15:43Z",
+    "sha256": "d886493e811d2c34a1662787876585506ff54db09ad3f2b31f5abfb259454d06",
     "source": "Yahoo Finance analyst consensus (forward EPS / revenue, revisions, price targets) - a dated SNAPSHOT, not history"
   },
   "earnings_events": {
@@ -24,7 +24,7 @@
     "kind": "HISTORICAL",
     "last_date": "2026-05-31",
     "notes": "",
-    "retrieved_at_utc": "2026-11-07T02:09:47Z",
+    "retrieved_at_utc": "2026-11-07T12:15:43Z",
     "rows": 16,
     "sha256": "6c723ddca130f997e29cc0e04cf7fb616e21d7a9beb90357919f09370d37513c",
     "source": "SEC EDGAR XBRL (10-K fiscal-year values)"
@@ -46,7 +46,7 @@
     "kind": "HISTORICAL",
     "last_date": "2026-08-31",
     "notes": "USD in $ millions. avail_date = first session reflecting the release (point-in-time safe).",
-    "retrieved_at_utc": "2026-11-07T02:09:47Z",
+    "retrieved_at_utc": "2026-11-07T12:15:43Z",
     "rows": 65,
     "sha256": "72ff4c52f15531fecbc076975fae38ee033de62152cdbcf15b1d711f358ce836",
     "source": "SEC EDGAR XBRL + Oracle earnings releases (derived ratios computed in analytics/fundamentals.py)"
@@ -68,9 +68,9 @@
     "kind": "HISTORICAL",
     "last_date": "2026-11-06",
     "notes": "",
-    "retrieved_at_utc": "2026-11-07T02:09:44Z",
+    "retrieved_at_utc": "2026-11-07T12:15:39Z",
     "rows": 4238,
-    "sha256": "0c947778a27020eab32982fbe62377eb655d280d571ca77ce52fa1a31c6754c5",
+    "sha256": "4861b0945efdfb0bb8f57b8c68e545391f08482c3c74c66c375922ac94f60825",
     "source": "Yahoo Finance via yfinance (auto_adjust=False; adj_close is dividend-adjusted)"
   },
   "peer_fundamentals": {
@@ -98,9 +98,9 @@
     "kind": "HISTORICAL",
     "last_date": "2026-11-06",
     "notes": "Benchmarks use total-return ETF proxies: SPY (S&P 500), QQQ (Nasdaq 100), SMH (semiconductors).",
-    "retrieved_at_utc": "2026-11-07T02:09:44Z",
+    "retrieved_at_utc": "2026-11-07T12:15:39Z",
     "rows": 4238,
-    "sha256": "44f68fe3b8b2e432731f93bf500965666907e162b7b13e74b6c5cb817879bd02",
+    "sha256": "ade21b5a99ef19d56aba9a5850f285832fab67e9c993f47f02af743faed78b4d",
     "source": "Yahoo Finance via yfinance (auto_adjust=False; adj_close is dividend-adjusted)",
     "tickers": [
       "ORCL",
@@ -119,7 +119,7 @@
     "kind": "HISTORICAL",
     "last_date": "2026-11-06",
     "notes": "Benchmarks use total-return ETF proxies: SPY (S&P 500), QQQ (Nasdaq 100), SMH (semiconductors).",
-    "retrieved_at_utc": "2026-11-07T02:09:44Z",
+    "retrieved_at_utc": "2026-11-07T12:15:39Z",
     "rows": 4238,
     "sha256": "f9cd9f2d7d09f3db6ac8916aa87062746efe20e2227d7281d97af2fd3649f0f9",
     "source": "Yahoo Finance via yfinance (auto_adjust=False; adj_close is dividend-adjusted)",
@@ -140,7 +140,7 @@
     "kind": "HISTORICAL",
     "last_date": "2026-11-06",
     "notes": "Benchmarks use total-return ETF proxies: SPY (S&P 500), QQQ (Nasdaq 100), SMH (semiconductors).",
-    "retrieved_at_utc": "2026-11-07T02:09:44Z",
+    "retrieved_at_utc": "2026-11-07T12:15:39Z",
     "rows": 4238,
     "sha256": "d5b4e75784aa6cde6dd2b28319886a7b3135a65402b6c781acc38474177f9e06",
     "source": "Yahoo Finance via yfinance (auto_adjust=False; adj_close is dividend-adjusted)",
@@ -161,7 +161,7 @@
     "kind": "HISTORICAL",
     "last_date": "2026-11-06",
     "notes": "Annualised decimal rates, forward-filled to trading days. rf_3m is used for Sharpe/Sortino/alpha, rf_10y for the DCF.",
-    "retrieved_at_utc": "2026-11-07T02:09:45Z",
+    "retrieved_at_utc": "2026-11-07T12:15:41Z",
     "rows": 4238,
     "sha256": "e54bf90e1971b8c7e85574f26d6f2885da1a4314bc919c5c1dd2e110d6edd48f",
     "source": "FRED (DGS3MO, DGS10) - Board of Governors of the Federal Reserve System"
