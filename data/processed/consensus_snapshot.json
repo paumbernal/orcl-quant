@@ -1,6 +1,6 @@
 {
   "ticker": "ORCL",
-  "retrieved_at_utc": "2026-11-14T02:35:48Z",
+  "retrieved_at_utc": "2026-11-14T12:49:55Z",
   "kind": "CONSENSUS",
   "source": "Yahoo Finance (aggregated sell-side consensus)",
   "earnings_estimate": {
@@ -158,19 +158,19 @@
   "growth_estimates": {
     "0q": {
       "stockTrend": -0.16370001,
-      "indexTrend": 0.2916
+      "indexTrend": 0.2918
     },
     "+1q": {
       "stockTrend": 0.1289,
-      "indexTrend": 0.2708
+      "indexTrend": 0.2713
     },
     "0y": {
       "stockTrend": 0.0682,
-      "indexTrend": 0.3335
+      "indexTrend": 0.33330002
     },
     "+1y": {
       "stockTrend": 0.3568,
-      "indexTrend": 0.1665
+      "indexTrend": 0.1667
     },
     "LTG": {
       "stockTrend": null,
@@ -206,7 +206,7 @@
     "totalCash": 37077000192,
     "ebitda": 34432999424,
     "totalRevenue": 71776002048,
-    "dividendYield": 1.57,
+    "dividendYield": 1.6,
     "payoutRatio": 0.31350002
   },
   "next_earnings_date": "2026-12-14",
@@ -234,7 +234,7 @@
       "totalCash": 62469001216,
       "ebitda": 201266003968,
       "totalRevenue": 302970011648,
-      "dividendYield": 0.6,
+      "dividendYield": 0.61,
       "payoutRatio": 0.0354
     },
     "MSFT": {
@@ -242,9 +242,9 @@
       "marketCap": 3890434801664,
       "enterpriseValue": 3959856824320,
       "sharesOutstanding": 7426194552,
-      "forwardEps": 24.19569,
+      "forwardEps": 24.18993,
       "trailingEps": 19.16,
-      "forwardPE": 21.65179,
+      "forwardPE": 21.656946,
       "trailingPE": 27.34238,
       "enterpriseToEbitda": 19.251,
       "enterpriseToRevenue": 11.43,
@@ -265,13 +265,13 @@
     "AMZN": {
       "currentPrice": 266.66,
       "marketCap": 2883431432192,
-      "enterpriseValue": 3073830289408,
+      "enterpriseValue": 3074046558208,
       "sharesOutstanding": 10813138306,
       "forwardEps": 10.91924,
       "trailingEps": 12.37,
       "forwardPE": 24.421114,
       "trailingPE": 21.556993,
-      "enterpriseToEbitda": 16.731,
+      "enterpriseToEbitda": 16.732,
       "enterpriseToRevenue": 3.855,
       "priceToSalesTrailing12Months": 3.615792,
       "beta": 1.503,
@@ -309,7 +309,7 @@
       "totalCash": 265098002432,
       "ebitda": 185515999232,
       "totalRevenue": 471097999360,
-      "dividendYield": 0.29,
+      "dividendYield": 0.3,
       "payoutRatio": 0.044899996
     }
   }
