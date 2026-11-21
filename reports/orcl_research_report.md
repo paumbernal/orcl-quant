@@ -1,6 +1,6 @@
 # ORCL Quantitative Investment & AI Valuation Lab - Research Report
 
-**Oracle Corporation (NYSE: ORCL)** | price $101.19 at the 2026-11-20 close | latest reported quarter FY27 Q1 (ended 2026-08-31) | consensus snapshot 2026-11-21 | generated 2026-11-21 03:21 UTC
+**Oracle Corporation (NYSE: ORCL)** | price $101.19 at the 2026-11-20 close | latest reported quarter FY27 Q1 (ended 2026-08-31) | consensus snapshot 2026-11-21 | generated 2026-11-21 14:01 UTC
 
 > **How to read this.** Every figure is either *historical data* (SEC filings, exchange prices, FRED rates - with source and retrieval date in `data/manifest.json`), a *consensus forecast* (a dated Yahoo Finance snapshot), a *stated assumption* (`config.yaml`, with the derivation logged in `models/valuation_assumption_log.csv`) or a *model output*. The conclusion at the end is the output of a fixed voting rule - not a discretionary view. This is research, not investment advice.
 
