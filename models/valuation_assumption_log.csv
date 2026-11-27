@@ -25,10 +25,10 @@ all,Interest rate on existing net debt,4.4% -> 6.4%,DATA,"TTM interest expense /
 bear,"Valuation multiples (P/E, EV/EBITDA, EV/Revenue)",19.6x / 13.3x / 5.6x,DATA,25th percentile of Oracle's own trailing multiples over 10 years (today 16.3x / 12.2x / 5.8x).
 base,"Valuation multiples (P/E, EV/EBITDA, EV/Revenue)",27.5x / 16.6x / 6.6x,DATA,50th percentile of Oracle's own trailing multiples over 10 years (today 16.3x / 12.2x / 5.8x).
 bull,"Valuation multiples (P/E, EV/EBITDA, EV/Revenue)",37.5x / 20.4x / 8.0x,DATA,75th percentile of Oracle's own trailing multiples over 10 years (today 16.3x / 12.2x / 5.8x).
-bear,Revenue FY27 ($m),"89,098",CONSENSUS,Lowest analyst estimate in the snapshot (2026-11-26).
+bear,Revenue FY27 ($m),"89,098",CONSENSUS,Lowest analyst estimate in the snapshot (2026-11-27).
 base,Revenue FY27 ($m),"90,462",CONSENSUS,Mean of 39 analysts.
 bull,Revenue FY27 ($m),"91,688",CONSENSUS,Highest analyst estimate in the snapshot.
-bear,Revenue FY28 ($m),"122,209",CONSENSUS,Lowest analyst estimate in the snapshot (2026-11-26).
+bear,Revenue FY28 ($m),"122,209",CONSENSUS,Lowest analyst estimate in the snapshot (2026-11-27).
 base,Revenue FY28 ($m),"131,818",CONSENSUS,Mean of 40 analysts.
 bull,Revenue FY28 ($m),"139,642",CONSENSUS,Highest analyst estimate in the snapshot.
 bear,Terminal growth,2.0%,SCENARIO,Stated scenario assumption; must stay below the 10-year Treasury yield (4.91%) and long-run nominal GDP growth.

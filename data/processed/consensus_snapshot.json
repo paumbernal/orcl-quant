@@ -1,6 +1,6 @@
 {
   "ticker": "ORCL",
-  "retrieved_at_utc": "2026-11-26T04:16:19Z",
+  "retrieved_at_utc": "2026-11-27T04:24:34Z",
   "kind": "CONSENSUS",
   "source": "Yahoo Finance (aggregated sell-side consensus)",
   "earnings_estimate": {
@@ -158,19 +158,19 @@
   "growth_estimates": {
     "0q": {
       "stockTrend": -0.16370001,
-      "indexTrend": 0.3022
+      "indexTrend": 0.3042
     },
     "+1q": {
       "stockTrend": 0.1289,
-      "indexTrend": 0.2749
+      "indexTrend": 0.275
     },
     "0y": {
       "stockTrend": 0.0682,
-      "indexTrend": 0.3369
+      "indexTrend": 0.33740002
     },
     "+1y": {
       "stockTrend": 0.3568,
-      "indexTrend": 0.1683
+      "indexTrend": 0.16780001
     },
     "LTG": {
       "stockTrend": null,
@@ -190,9 +190,9 @@
     "enterpriseValue": 451549691904,
     "sharesOutstanding": 3117708046,
     "forwardEps": 11.05881,
-    "trailingEps": 6.05,
+    "trailingEps": 6.38,
     "forwardPE": 9.393415,
-    "trailingPE": 17.170246,
+    "trailingPE": 16.282131,
     "enterpriseToEbitda": 13.114,
     "enterpriseToRevenue": 6.291,
     "priceToSalesTrailing12Months": 4.5121975,
@@ -206,7 +206,7 @@
     "totalCash": 37077000192,
     "ebitda": 34432999424,
     "totalRevenue": 71776002048,
-    "dividendYield": 1.83,
+    "dividendYield": 1.93,
     "payoutRatio": 0.31350002
   },
   "next_earnings_date": "2026-12-14",
@@ -218,9 +218,9 @@
       "enterpriseValue": 3539442860032,
       "sharesOutstanding": 24147000000,
       "forwardEps": 16.60528,
-      "trailingEps": 8.95,
+      "trailingEps": 9.31,
       "forwardPE": 8.991117,
-      "trailingPE": 16.681564,
+      "trailingPE": 16.03652,
       "enterpriseToEbitda": 14.549,
       "enterpriseToRevenue": 9.783,
       "priceToSalesTrailing12Months": 9.964255,
@@ -234,7 +234,7 @@
       "totalCash": 97731002368,
       "ebitda": 243280003072,
       "totalRevenue": 361808003072,
-      "dividendYield": 0.64,
+      "dividendYield": 0.67,
       "payoutRatio": 0.0354
     },
     "MSFT": {
@@ -242,9 +242,9 @@
       "marketCap": 3638315450368,
       "enterpriseValue": 3707737473024,
       "sharesOutstanding": 7426194552,
-      "forwardEps": 24.20376,
+      "forwardEps": 24.20084,
       "trailingEps": 19.16,
-      "forwardPE": 20.241896,
+      "forwardPE": 20.244339,
       "trailingPE": 25.57046,
       "enterpriseToEbitda": 18.026,
       "enterpriseToRevenue": 10.702,
@@ -259,7 +259,7 @@
       "totalCash": 64509001728,
       "ebitda": 205690994688,
       "totalRevenue": 346444988416,
-      "dividendYield": 0.79,
+      "dividendYield": 0.8,
       "payoutRatio": 0.19
     },
     "AMZN": {
@@ -292,9 +292,9 @@
       "marketCap": 3357491331072,
       "enterpriseValue": 3260747350016,
       "sharesOutstanding": 5888000000,
-      "forwardEps": 15.29499,
+      "forwardEps": 15.29738,
       "trailingEps": 19.15,
-      "forwardPE": 17.85552,
+      "forwardPE": 17.85273,
       "trailingPE": 14.261097,
       "enterpriseToEbitda": 17.577,
       "enterpriseToRevenue": 6.922,
